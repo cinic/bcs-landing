@@ -6,7 +6,371 @@ html lang='ru'
     meta name='viewport' content='width=device-width, initial-scale=1'
     meta http-equiv='X-UA-Compatible' content='IE=edge'
     link rel='stylesheet' href='css/vendor/normalize.css'
+    link rel='stylesheet' href='css/vendor/selectize.css'
     link rel='stylesheet' href='css/main.css'
   body
+    header.header
+      .layout.clearfix
+        a.brand href='#' title='BCS Broker'
+          img src='img/brand.png' alt='BCS Broker'
+        ul.top-nav
+          li
+            i.icon.phone
+            ' 8 800 500 55 45
+          li
+            a href='#' Получить консультацию
+          li
+            a.open-account href='https://broker.ru/become_customer_esia' Открыть счёт онлайн
+            span.comment через gosuslugi.ru
+    div.main.clearfix
+      .layout
+        h1.section-title.white Время инвестировать в ликвидные инструменты
+        #tickers.tab-container.clearfix
+          .tab-bar
+            a.tab.active href='#stock'
+              span
+                i.icon.stock
+                |Акции
+            a.tab href='#crude'
+              span
+                i.icon.crude
+                |Сырье
+            a.tab href='#indicies'
+              span
+                i.icon.indicies
+                'Биржевые индексы
+          .tab-content
+            #stock.tab-body.active.clearfix
+              .stock-col
+                .row
+                  label.custom-radio.checked
+                    input.radio-input type='radio' checked='checked' value='gazp' name='stock_ticker' data-target='#stock-news'
+                    ' ГАЗПРОМ ао    
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='avaz' name='stock_ticker' data-target='#stock-news'
+                    ' АВТОВАЗ ао
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='aflt' name='stock_ticker' data-target='#stock-news'
+                    ' Аэрофлот
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='vtbr' name='stock_ticker' data-target='#stock-news'
+                    ' ВТБ ао
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='gmkn' name='stock_ticker' data-target='#stock-news'
+                    ' ГМКНорНик
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='lkoh' name='stock_ticker' data-target='#stock-news'
+                    ' ЛУКОЙЛ ао
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='mtss' name='stock_ticker' data-target='#stock-news'
+                    ' МТС-ао
+              .stock-col
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='ogkb' name='stock_ticker' data-target='#stock-news'
+                    ' ОГК-5 ао    
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='rosn' name='stock_ticker' data-target='#stock-news'
+                    ' Роснефть ао
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='rtkm' name='stock_ticker' data-target='#stock-news'
+                    ' Ростел-ао
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='sber' name='stock_ticker' data-target='#stock-news'
+                    ' Сбербанк
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='chmf' name='stock_ticker' data-target='#stock-news'
+                    ' СевСт-ао
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='sngs' name='stock_ticker' data-target='#stock-news'
+                    ' Сургнфгз ао
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='urka' name='stock_ticker' data-target='#stock-news'
+                    ' Уралкалий-ао
+              .stock-col.col--2
+                #stock-news.news-container.clearfix
+                  h2.block-title Новости и аналитика:
+                  .news-item
+                  
+            #crude.tab-body.clearfix
+              .stock-col
+                .row
+                  label.custom-radio.checked
+                    input.radio-input type='radio' checked='checked' value='brent' name='crude_ticker' data-target='#crude-news'
+                    ' Нефть Brent    
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='avaz' name='crude_ticker' data-target='#crude-news'
+                    ' Золото
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='aflt' name='crude_ticker' data-target='#crude-news'
+                    ' Алюминий
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='vtbr' name='crude_ticker' data-target='#crude-news'
+                    ' Медь
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='gmkn' name='crude_ticker' data-target='#crude-news'
+                    ' Никель
+              .stock-col
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='lkoh' name='crude_ticker' data-target='#crude-news'
+                    ' Палладий
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='mtss' name='crude_ticker' data-target='#crude-news'
+                    ' Платина
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='lkoh' name='crude_ticker' data-target='#crude-news'
+                    ' Серебро
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='mtss' name='crude_ticker' data-target='#crude-news'
+                    ' Цинк
+              .stock-col.col--2
+                #crude-news.news-container.clearfix
+                  h2.block-title Новости и аналитика:
+                  .news-item
+                    time.date datetime='2016-02-01T12:12:20' 25.01.2016
+                    h3.news-title
+                      a href='#' Завтрак инвестора:<br>Украина решила оштрафовать Газпром на $3,5 млрд
+                    .news-content
+                      p Антимонопольный комитет Украины решил оштрафовать Газпром на 85 млрд гривен ($3,47 млрд) за злоупотребление монопольным положением на рынке транзита газа по магистральным трубопроводам по территории Украины.
+            #indicies.tab-body.clearfix
+              .stock-col
+                .row
+                  label.custom-radio.checked
+                    input.radio-input type='radio' checked='checked' value='micex' name='indicies_ticker' data-target='#indicies-news'
+                    ' ММВБ
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='avaz' name='indicies_ticker' data-target='#indicies-news'
+                    ' РТС
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='aflt' name='indicies_ticker' data-target='#indicies-news'
+                    ' ММВБ-10
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='vtbr' name='indicies_ticker' data-target='#indicies-news'
+                    ' РТС-2
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='gmkn' name='indicies_ticker' data-target='#indicies-news'
+                    ' KASE
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='lkoh' name='indicies_ticker' data-target='#indicies-news'
+                    ' Dow (DJIA)
+              .stock-col
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='gazp' name='indicies_ticker' data-target='#indicies-news'
+                    ' NASDAQ
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='avaz' name='indicies_ticker' data-target='#indicies-news'
+                    ' S&amp;P 500
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='aflt' name='indicies_ticker' data-target='#indicies-news'
+                    ' Nikkei 225
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='vtbr' name='indicies_ticker' data-target='#indicies-news'
+                    ' Hang Seng
+                .row
+                  label.custom-radio
+                    input.radio-input type='radio' value='gmkn' name='indicies_ticker' data-target='#indicies-news'
+                    ' IBOVESPA
+              .stock-col.col--2
+                #indicies-news.news-container.clearfix
+                  h2.block-title Новости и аналитика:
+                  .news-item
+                    time.date datetime='2016-02-01T12:12:20' 25.01.2016
+                    h3.news-title
+                      a href='#' Завтрак инвестора:<br>Украина решила оштрафовать Газпром на $3,5 млрд
+                    .news-content
+                      p Антимонопольный комитет Украины решил оштрафовать Газпром на 85 млрд гривен ($3,47 млрд) за злоупотребление монопольным положением на рынке транзита газа по магистральным трубопроводам по территории Украины.
+        .graph-container
+          .switch.clearfix
+            a.item.active.graph href='#graph' График
+            a.item.calc href='#calc' Калькулятор
+          h3#container-title.block-title
+            ' Оцените доход от инвестирования в 
+            span акции Газпром
+          .graph-data
+            #graph.graph-data-item.active.clearfix
+              .col
+                h3#data-title.data-title.clearfix
+                .col.col--1
+                  #card-current-price.card-current-price
+                  div.card-change-price
+                    span#card-change-pips.down
+                    span#card-change-perc.down
+                  #card-ticker.card-ticker
+                  time#card-time.card-time
+                  time#card-date.card-date
+                .col.col--1
+                  ul.card-list
+                    li.clearfix
+                      span.label Текущая:
+                      span#card-list-current.val
+                    li.clearfix
+                      span.label Изменение:
+                      span#card-list-change-perc.val
+                    li.clearfix
+                      span.label Открытие:
+                      span#card-list-open.val
+                    li.clearfix
+                      span.label Макс:
+                      span#card-list-max.val
+                    li.clearfix
+                      span.label Мин:
+                      span#card-list-min.val
+                    li.clearfix
+                      span.label Закрытие:
+                      span#card-list-close.val
+                    li.clearfix
+                      span.label Объём:
+                      span#card-list-volume.val
+              .col.col--2
+                #card-chart.card-chart 1
+              
+            #calc.graph-data-item.clearfix
+              .col.col--3
+                h3#description-title.description-title
+                  |551 млрд. рублей<br>Чистая прибыль компании за&nbsp;2013&nbsp;год
+                #description-text.description-text
+                  |ОАО «Газпром» — крупнейшая энергетическая компания в России. На компанию приходится 13% от всего объема мировой и 73% от объема российской добычи газа. Газпром входит в пятерку крупнейших производителей нефти в России, а также является крупнейшим владельцем генерирующих активов на ее территории.<br>Газпром входит в пятерку крупнейших производителей
+              .col.col--4
+                |3
+        .consultation
+          h3.block-title Узнайте, как заработать на финансовых инструментах
+          form#consultation-form.consultation-form name='consultation_form'
+            .row
+              select.form-select name='city' aria-invalid='false'
+                option selected='selected' value='108' Москва
+                option value='134' Новосибирск
+                option value='113' Альметьевск
+                option value='105' Астрахань
+                option value='79' Барнаул
+                option value='132' Владивосток
+                option value='147' Волгоград
+                option value='63' Воронеж
+                option value='14' Екатеринбург
+                option value='168' Ижевск
+                option value='88' Иркутск
+                option value='146' Казань
+                option value='27' Калининград
+                option value='37' Кемерово
+                option value='21' Краснодар
+                option value='116' Красноярск
+                option value='92' Лимассол
+                option value='112' Липецк
+                option value='149' Нижний Новгород
+                option value='152' Новокузнецк
+                option value='64' Норильск
+                option value='97' Омск
+                option value='23' Оренбург
+                option value='170' Пенза
+                option value='62' Пермь
+                option value='89' Ростов-на-Дону
+                option value='19' Самара
+                option value='15' Санкт-Петербург
+                option value='81' Саратов
+                option value='161' Сочи
+                option value='129' Ставрополь
+                option value='135' Стерлитамак
+                option value='114' Сургут
+                option value='153' Таганрог
+                option value='29' Тольятти
+                option value='90' Томск
+                option value='53' Тула
+                option value='69' Тюмень
+                option value='167' Уфа
+                option value='57' Челябинск
+                option value='12' Череповец
+                option value='133' Ярославль
+                option value='0' Другой город
+              input.form-input type='text' name='full_name' placeholder='ФИО'
+              input.form-input type='text' name='phone' placeholder='Телефон'
+              input.form-input type='text' name='email' placeholder='E-mail'
+              input.form-submit type='submit' name='ok' value='Получить консультацию'
+    div.meta.clearfix
+      .layout
+        h3.section-title Новости и аналитика:
+        ul#meta-news-container.meta-news-container
+        
+        .consultation
+          h3.block-title Узнайте, как заработать на финансовых инструментах
+          form#consultation-form-2.consultation-form.grey name='consultation_form_2'
+            .row
+              select.form-select name='city' aria-invalid='false'
+                option selected='selected' value='108' Москва
+                option value='134' Новосибирск
+                option value='113' Альметьевск
+                option value='105' Астрахань
+                option value='79' Барнаул
+                option value='132' Владивосток
+                option value='147' Волгоград
+                option value='63' Воронеж
+                option value='14' Екатеринбург
+                option value='168' Ижевск
+                option value='88' Иркутск
+                option value='146' Казань
+                option value='27' Калининград
+                option value='37' Кемерово
+                option value='21' Краснодар
+                option value='116' Красноярск
+                option value='92' Лимассол
+                option value='112' Липецк
+                option value='149' Нижний Новгород
+                option value='152' Новокузнецк
+                option value='64' Норильск
+                option value='97' Омск
+                option value='23' Оренбург
+                option value='170' Пенза
+                option value='62' Пермь
+                option value='89' Ростов-на-Дону
+                option value='19' Самара
+                option value='15' Санкт-Петербург
+                option value='81' Саратов
+                option value='161' Сочи
+                option value='129' Ставрополь
+                option value='135' Стерлитамак
+                option value='114' Сургут
+                option value='153' Таганрог
+                option value='29' Тольятти
+                option value='90' Томск
+                option value='53' Тула
+                option value='69' Тюмень
+                option value='167' Уфа
+                option value='57' Челябинск
+                option value='12' Череповец
+                option value='133' Ярославль
+                option value='0' Другой город
+              input.form-input type='text' name='full_name' placeholder='ФИО'
+              input.form-input type='text' name='phone' placeholder='Телефон'
+              input.form-input type='text' name='email' placeholder='E-mail'
+              input.form-submit type='submit' name='ok' value='Получить консультацию'
+    
     script src='js/vendor/jquery-2.1.4.js'
+    script src='js/vendor/selectize.js'
     script src='js/main.js'

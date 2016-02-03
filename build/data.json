@@ -1,0 +1,17 @@
+{
+  "exchange": "ММВБ",
+  "price": {
+    "current": "132.50",
+    "change_pips": "-0.66",
+    "change_percent": "-1.05%",
+    "open": "133.09",
+    "max": "134.0",
+    "min": "132.10",
+    "close": "132.50",
+    "volume": "4835469478.60"
+  },
+  "ticker": "gazp",
+  "block_title": "акции Газпрома",
+  "time": "15:25 Мск",
+  "date": "25 января 2016"
+}

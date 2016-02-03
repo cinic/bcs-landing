@@ -39,8 +39,9 @@ var path = {
   },
   src: {
     html: ['source/*.slim', '!source/partials/_*.slim'],
+    data_json: 'source/*.json',
     js: ['source/assets/javascripts/*.coffee', '!source/assets/javascripts/*/_*.coffee'],
-    sass: 'source/assets/stylesheets/',
+    sass: 'source/assets/stylesheets/*.scss',
     img: 'source/assets/images/**/**/*.*',
     fonts: 'source/assets/fonts/**/*.*'
   },
@@ -50,10 +51,11 @@ var path = {
   },
   watch: {
     html: 'source/**/*.slim',
+    data_json: 'source/**/*.json',
     js: 'source/assets/javascripts/**/*.coffee',
     vendor_js: 'source/assets/javascripts/vendor/*.js',
     css: 'source/assets/stylesheets/*.scss',
-    vendor_css: 'source/assets/stylesheets/vendor/*.scss',
+    vendor_css: 'source/assets/stylesheets/vendor/*.css',
     img: 'source/assets/images/**/**/*.*',
     fonts: 'source/assets/fonts/**/*.*'
   },
@@ -94,6 +96,12 @@ gulp.task('html:build', function () {
     .pipe(gulp.dest(path.build.html)) // Записываем собранные файлы
     .pipe(gulp.dest(path.site.html)) // Публикуем на битбакет
     .pipe(reload({stream: true})); // даем команду на перезагрузку страницы
+});
+
+gulp.task('html:data_build', function () {
+  return gulp.src(path.src.data_json)
+    .pipe(gulp.dest(path.build.html))
+    .pipe(reload({stream: true}));
 });
 
 gulp.task('js:build', function () {
@@ -160,6 +168,7 @@ gulp.task('fonts:build', function () {
 
 gulp.task('build', [
   'html:build',
+  'html:data_build',
   'js:build',
   'css:build',
   'fonts:build',
@@ -172,6 +181,9 @@ gulp.task('build', [
 gulp.task('watch', function () {
   watch([path.watch.html], function (event, cb) {
     gulp.start('html:build');
+  });
+  watch([path.watch.data_json], function (event, cb) {
+    gulp.start('html:data_build');
   });
   watch([path.watch.css], function (event, cb) {
     gulp.start('css:build');
