@@ -7,6 +7,7 @@ html lang='ru'
     meta http-equiv='X-UA-Compatible' content='IE=edge'
     link rel='stylesheet' href='css/vendor/normalize.css'
     link rel='stylesheet' href='css/vendor/selectize.css'
+    link rel='stylesheet' href='css/vendor/nouislider.css'
     link rel='stylesheet' href='css/main.css'
   body
     header.header
@@ -260,7 +261,51 @@ html lang='ru'
                 #description-text.description-text
                   |ОАО «Газпром» — крупнейшая энергетическая компания в России. На компанию приходится 13% от всего объема мировой и 73% от объема российской добычи газа. Газпром входит в пятерку крупнейших производителей нефти в России, а также является крупнейшим владельцем генерирующих активов на ее территории.<br>Газпром входит в пятерку крупнейших производителей
               .col.col--4
-                |3
+                .calculator
+                  .calc-row.clearfix
+                    label.label Сумма для инвестирования
+                    .input
+                      input#calc-range-input.calc-input type='text' name='calc_value' value='440000'
+                      #range-slider.no-ui-slider
+                        #calc-range.slider
+                        
+                  .calc-row.clearfix
+                    label.label Выбор периода инвестирования
+                    .input
+                      label.input-label
+                        input type='radio' name='calc_period' value='0.25'
+                        |3 месяца
+                      label.input-label.active
+                        input type='radio' checked='checked' name='calc_period' value='0.5'
+                        |6 месяцев
+                      label.input-label
+                        input type='radio' name='calc_period' value='1'
+                        |12 месяцев
+                        
+                  .calc-row.clearfix
+                    .label
+                      label.label
+                        ' Акции куплены: 
+                        #stock-buy-date 06.10.2014
+                        #stock-buy-price по 222.30 руб
+                      label.label
+                        ' Акции проданы: 
+                        #stock-sell-date 06.10.2014
+                        #stock-sell-price по 222.30 руб
+                    .input
+                      table
+                        tr
+                          th Доход
+                          td#profit 508 596 руб.
+                        tr
+                          th Доход в % годовых
+                          td#profit-percent data-value='31.17' 31.17%
+                        tr
+                          th
+                            ' Доход за 
+                            span#profit-time 6 
+                            ' месяцев
+                          td#profit-percent 68 234 руб.
         .consultation
           h3.block-title Узнайте, как заработать на финансовых инструментах
           form#consultation-form.consultation-form name='consultation_form'
@@ -373,4 +418,6 @@ html lang='ru'
     
     script src='js/vendor/jquery-2.1.4.js'
     script src='js/vendor/selectize.js'
+    script src='js/vendor/wnumb.js'
+    script src='js/vendor/nouislider.js'
     script src='js/main.js'

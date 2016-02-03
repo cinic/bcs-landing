@@ -17,6 +17,9 @@ h5,
 h6 {
   font-weight: 400;
 }
+label {
+  cursor: pointer;
+}
 body {
   font-family: 'HelveticaNeueCyr', Helvetica, sans-serif;
   font-weight: 400;
@@ -410,6 +413,79 @@ body {
           font-weight: 300;
           line-height: 22px;
           color: #010000;
+        }
+        .calc-row {
+          margin-bottom: 30px;
+          >.label {
+            margin-left: 30px;
+            .label:first-child {
+              margin-bottom: 26px;
+            }
+          }
+          .label {
+            float: left;
+            width: 110px;
+            font-size: 14px;
+            line-height: 16px;
+          }
+          .input {
+            float: left;
+            margin-left: 20px;
+            width:400px;
+          }
+          .input-label {
+            display: inline-block;
+            margin-right: 18px;
+            width: 118px;
+            line-height: 30px;
+            font-size: 14px;
+            font-weight: 300;
+            border: 1px solid #e8b942;
+            color: #303d59;
+            text-align: center;
+            border-radius: 18px;
+
+            &:last-child { margin-right: 0; }
+            &.active,
+            &:hover {
+              font-weight: 700;
+              background: #303d59;
+              border-color: #303d59;
+              color: white;
+            }
+            input { display: none; }
+          }
+          .calc-input {
+            display: inline-block;
+            padding: 0 25px;
+            width: 200px;
+            line-height: 30px;
+            font-size: 14px;
+            font-weight: 700;
+            border: 1px solid #e8b942;
+            color: #303d59;
+            border-radius: 18px;
+            outline: none;
+          }
+          table {
+            width: 100%;
+            font-weight: 300;
+            border: 1px solid #b7b7b7;
+            color: #062452;
+
+            tr:nth-child(even) {
+              background: #ebeef1;
+            }
+            th,
+            td {
+              padding: 0 15px;
+              line-height: 40px;
+              font-weight: 300;
+              text-align: left;
+              border: 1px solid #b7b7b7;
+            }
+            td { font-weight: 700; }
+          }
         }
       }
     }

@@ -1,4 +1,4 @@
-﻿$ ->
+$ ->
   # Load default data into tabs-container for checked items
   $( '#tickers .radio-input[name*="ticker"]:checked' ).each (e) ->
     getLastNews( @ )
@@ -33,6 +33,17 @@
     $(@).siblings().removeClass( 'active' ).end().andSelf().addClass( 'active' )
   # Selectize
   $( 'select' ).selectize()
+  # Calculator
+  $('.calculator #calc-range-input').on 'change', ->
+    val = ($(@).val().match(/([0-9\s]+)( ₽)/)[1].replace(/\s/g, "") * 1).formatMoney(0, '', ' ')
+    $(@).val( val )
+    $('.calculator #range-value').text( val )
+
+  $('input[name="calc_period"]').on 'change', ->
+    value = $('.calculator #calc-range-input').val().match(/([0-9\s]+)( ₽)/)[1].replace(/\s/g, "") * 1
+    $( 'input[name="calc_period"]' ).parent().removeClass('active')
+    $( @ ).parent().addClass('active')
+    $('.calculator #profit').text( calcValue( value) )
 
 
 getNews = ( elem ) ->
@@ -99,3 +110,46 @@ getChartData = ( elem ) ->
     $( '#card-list-close', _context ).html _close
     $( '#card-list-volume', _context ).html _volume
     $( '#card-chart', _context ).html '<img src="img/chart.jpg" width="560" height="324" alt="..."/>'
+
+# Number formatter
+Number::formatMoney = (c, d, t) ->
+	n = this
+	c = if isNaN(c = Math.abs(c)) then 2 else c
+	d = if d == undefined then '.' else d
+	t = if t == undefined then ',' else t
+	s = if n < 0 then '-' else ''
+	i = parseInt(n = Math.abs(+n or 0).toFixed(c)) + ''
+	j = if (j = i.length) > 3 then j % 3 else 0
+	s + (if j then i.substr(0, j) + t else '') + i.substr(j).replace(/(\d{3})(?=\d)/g, '$1' + t) + (if c then d + Math.abs(n - i).toFixed(c).slice(2) else '') + ' ₽'
+
+calcValue = (v) ->
+	percent = $( '#profit-percent' ).data( 'value' ) * 1
+	interval = $( 'input[name="calc_period"]:checked' ).val() * 1
+	r = v / 100 * percent * interval
+	(Math.floor(r,0)).formatMoney(0, '', ' ')
+
+slider = document.getElementById('calc-range')
+if slider?
+	valueInput = document.getElementById('calc-range-input')
+	noUiSlider.create slider,
+		start: 100000,
+		connect: 'lower',
+		step: 10000,
+		range:
+			'min': 50000,
+			'max': 3000000
+		pips:
+			mode: 'values',
+			values: [50000, 500000, 1000000, 1500000, 2000000, 3000000],
+			density: 10000,
+			format: wNumb
+				postfix: '&nbsp;т.',
+				encoder: (value) ->
+					value / 1000
+	slider.noUiSlider.on 'update', ( values, handle ) ->
+		rawValue = values[handle] * 1
+		valueInput.value = (values[handle] * 1).formatMoney(0, '', ' ')
+		$('.calculator #profit').text( calcValue(values[handle] * 1) )
+
+	valueInput.addEventListener 'change', ->
+		slider.noUiSlider.set([null, this.value])
