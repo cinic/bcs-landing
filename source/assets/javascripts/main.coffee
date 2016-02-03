@@ -1,4 +1,6 @@
 $ ->
+  # Custom radio
+  $( '.custom-radio' ).append( '<span class="radio-icon"/>' )
   # Load default data into tabs-container for checked items
   $( '#tickers .radio-input[name*="ticker"]:checked' ).each (e) ->
     getLastNews( @ )

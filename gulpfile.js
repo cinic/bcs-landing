@@ -101,6 +101,7 @@ gulp.task('html:build', function () {
 gulp.task('html:data_build', function () {
   return gulp.src(path.src.data_json)
     .pipe(gulp.dest(path.build.html))
+    .pipe(gulp.dest(path.site.html))
     .pipe(reload({stream: true}));
 });
 

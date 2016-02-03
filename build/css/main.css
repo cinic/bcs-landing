@@ -123,6 +123,16 @@ body > .header .top-nav li {
 body > .header .top-nav li:first-child {
   line-height: 39px;
 }
+body > .header .top-nav li .icon {
+  position: absolute;
+}
+body > .header .top-nav li .icon.phone {
+  top: 2px;
+  left: -54px;
+  width: 34px;
+  height: 34px;
+  background: url("../img/phone.png") no-repeat 0 0;
+}
 body > .header .top-nav li a {
   display: block;
   padding-left: 26px;
@@ -200,8 +210,20 @@ body .main .tab-container .stock-col .row label {
 body .main .tab-container .stock-col .row label.checked {
   font-weight: 700;
 }
+body .main .tab-container .stock-col .row label.checked .radio-icon {
+  background-position: 0 -19px;
+}
 body .main .tab-container .stock-col .row label .radio-input {
   margin-right: 14px;
+  visibility: hidden;
+}
+body .main .tab-container .stock-col .row label .radio-icon {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  left: -2px;
+  top: -1px;
+  background: url("../img/radio.png") no-repeat 0 0;
 }
 body .main .tab-container .stock-col.col--2 {
   width: 477px;

@@ -1,6 +1,7 @@
 var calcValue, getChartData, getLastNews, getNews, slider, valueInput;
 
 $(function() {
+  $('.custom-radio').append('<span class="radio-icon"/>');
   $('#tickers .radio-input[name*="ticker"]:checked').each(function(e) {
     return getLastNews(this);
   });

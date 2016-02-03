@@ -71,6 +71,16 @@ body {
         &:first-child {
           line-height: 39px;
         }
+        .icon {
+          position: absolute;
+          &.phone {
+            top: 2px;
+            left: -54px;
+            width: 34px;
+            height: 34px;
+            background: url('../img/phone.png') no-repeat 0 0;
+          }
+        }
 
         a {
           display: block;
@@ -150,9 +160,21 @@ body {
             color: #010000;
             &.checked {
               font-weight: 700;
+              .radio-icon {
+                background-position: 0 -19px;
+              }
             }
             .radio-input {
               margin-right: 14px;
+              visibility: hidden;
+            }
+            .radio-icon {
+              position: absolute;
+              width: 19px;
+              height: 19px;
+              left: -2px;
+              top: -1px;
+              background: url('../img/radio.png') no-repeat 0 0;
             }
           }
         }
