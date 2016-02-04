@@ -45,7 +45,6 @@ $ ->
     $( @ ).blur()
   $('input[name="calc_period"]').on 'change', ->
     value = $('.calculator #calc-range-input').val().match(/([0-9\s]+)( ₽)/)[1].replace(/\s/g, "") * 1
-    console.log value
     $( 'input[name="calc_period"]' ).parent().removeClass('active')
     $( @ ).parent().addClass('active')
     $('.calculator #profit').text( calcValue( value, value ) )
@@ -57,6 +56,23 @@ $ ->
     $( '#profit-percent' ).html( $( @ ).data('profit_percent') + ' %' )
     $( '#profit-time' ).html( $( @ ).parent().text() )
 
+darkBox = ( e ) ->
+  e.preventDefault()
+  e.stopPropagation()
+  darkbox = $('<div class="darkbox"><div class="fix-scroll"><div class="darkbox-shadow"></div><div class="container"><div class="darkbox-container radius"><span class="darkbox-close"></span><div class="darkbox-content"></div></div></div></div></div>');
+  wH = $(window).height() + 30;
+  _elem = $( e.target ).attr('href')
+  _news = $( '<div/>', { 'class': 'meta', html: '<div class="meta-news-container">' + $( _elem ).html() + '</div>' } )
+  $( 'body' ).css('overflow','hidden').append( darkbox );
+  $( '.fix-scroll' ).height( wH );
+  # Resize window
+  if ($( '.fix-scroll' ).length > 0)
+    $( window ).resize ->
+      $( '.fix-scroll' ).height( $( window ).height() + 30 )
+  $( '.darkbox-content' ).append( _news )
+  $( '.darkbox-close, .darkbox .darkbox-shadow' ).on 'click', ->
+    darkbox.remove()
+    $( 'body' ).css('overflow','auto')
 
 getNews = ( elem ) ->
   _ticker = $(elem).val()
@@ -67,10 +83,14 @@ getNews = ( elem ) ->
       _time = $( '<time/>', { 'class': 'date', html: val['datetime'] } )
       _title = $( '<h4/>', { 'class': 'title', html: val['title'] } )
       _content = $( '<div/>', { 'class': 'news-content', html: val['teaser'] } )
-      _actions = $( '<div/>', { 'class': 'actions clearfix', html: '<a class="more" href="' + val['url'] + '">Подробнее</a>' } )
-      _item = $( '<li/>', { 'class': 'news-item' } )
-      _item.append( _time ).append( _title ).append( _content ).append( _actions )
+      _content_full = $( '<div/>', { 'class': 'news-content full', html: val['content'] } )
+      _actions = $( '<div/>', { 'class': 'actions clearfix', html: '<a class="more" href="#news-id-' + val['id'] + '">Подробнее</a>' } )
+      _item = $( '<li/>', { 'class': 'news-item', 'id': 'news-id-' + val['id'] } )
+      _item.append( _time ).append( _title ).append( _content ).append( _content_full ).append( _actions )
       $( '#meta-news-container' ).append( _item )
+    # Darkbox
+    $( 'a.more' ).on 'click', (e) ->
+      darkBox(e)
 
 getLastNews = ( elem ) ->
   _ticker = $(elem).val()
@@ -142,6 +162,7 @@ getChartData = ( elem ) ->
     $( '#profit-percent' ).html _calculator_6['profit_percent'] + ' %'
     slider.noUiSlider.set(250000)
     $( 'input#calc-period-6' ).prop('checked', true).change()
+
 
 # Number formatter
 Number::formatMoney = (c, d, t) ->

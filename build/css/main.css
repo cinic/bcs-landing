@@ -649,6 +649,9 @@ body .meta .meta-news-container .title {
   font-weight: 300;
   line-height: 36px;
 }
+body .meta .meta-news-container .news-content.full {
+  display: none;
+}
 body .meta .meta-news-container p {
   margin-top: 0;
   font-weight: 300;
@@ -683,4 +686,60 @@ body .selectize-control.form-select .selectize-input {
   box-shadow: none !important;
   color: #062452;
   outline: none;
+}
+body .darkbox {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(1, 0, 0, 0.6);
+  z-index: 101;
+}
+body .darkbox .container {
+  position: relative;
+  padding-bottom: 100px;
+  width: 100%;
+}
+body .darkbox .fix-scroll {
+  width: 100%;
+  overflow: auto;
+}
+body .darkbox .darkbox-container {
+  position: relative;
+  width: 80%;
+  top: 40px;
+  bottom: 40px;
+  margin-left: 10%;
+  background-color: white;
+}
+body .darkbox .darkbox-shadow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+body .darkbox .darkbox-content {
+  padding: 30px;
+}
+body .darkbox .darkbox-content .more,
+body .darkbox .darkbox-content .news-content {
+  display: none;
+}
+body .darkbox .darkbox-content .more.full,
+body .darkbox .darkbox-content .news-content.full {
+  display: block;
+}
+body .darkbox .darkbox-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+  background-image: url("../img/close.png");
+  cursor: pointer;
 }

@@ -1,4 +1,4 @@
-var calcValue, getChartData, getLastNews, getNews, slider, valueInput;
+var calcValue, darkBox, getChartData, getLastNews, getNews, slider, valueInput;
 
 $(function() {
   $('.custom-radio').append('<span class="radio-icon"/>');
@@ -49,7 +49,6 @@ $(function() {
   return $('input[name="calc_period"]').on('change', function() {
     var value;
     value = $('.calculator #calc-range-input').val().match(/([0-9\s]+)( ₽)/)[1].replace(/\s/g, "") * 1;
-    console.log(value);
     $('input[name="calc_period"]').parent().removeClass('active');
     $(this).parent().addClass('active');
     $('.calculator #profit').text(calcValue(value, value));
@@ -63,6 +62,31 @@ $(function() {
   });
 });
 
+darkBox = function(e) {
+  var _elem, _news, darkbox, wH;
+  e.preventDefault();
+  e.stopPropagation();
+  darkbox = $('<div class="darkbox"><div class="fix-scroll"><div class="darkbox-shadow"></div><div class="container"><div class="darkbox-container radius"><span class="darkbox-close"></span><div class="darkbox-content"></div></div></div></div></div>');
+  wH = $(window).height() + 30;
+  _elem = $(e.target).attr('href');
+  _news = $('<div/>', {
+    'class': 'meta',
+    html: '<div class="meta-news-container">' + $(_elem).html() + '</div>'
+  });
+  $('body').css('overflow', 'hidden').append(darkbox);
+  $('.fix-scroll').height(wH);
+  if ($('.fix-scroll').length > 0) {
+    $(window).resize(function() {
+      return $('.fix-scroll').height($(window).height() + 30);
+    });
+  }
+  $('.darkbox-content').append(_news);
+  return $('.darkbox-close, .darkbox .darkbox-shadow').on('click', function() {
+    darkbox.remove();
+    return $('body').css('overflow', 'auto');
+  });
+};
+
 getNews = function(elem) {
   var _ticker;
   _ticker = $(elem).val();
@@ -70,8 +94,8 @@ getNews = function(elem) {
     var _items;
     _items = [];
     $('#meta-news-container').html('');
-    return $.each(data['news'], function(key, val) {
-      var _actions, _content, _item, _time, _title;
+    $.each(data['news'], function(key, val) {
+      var _actions, _content, _content_full, _item, _time, _title;
       _time = $('<time/>', {
         'class': 'date',
         html: val['datetime']
@@ -84,15 +108,23 @@ getNews = function(elem) {
         'class': 'news-content',
         html: val['teaser']
       });
+      _content_full = $('<div/>', {
+        'class': 'news-content full',
+        html: val['content']
+      });
       _actions = $('<div/>', {
         'class': 'actions clearfix',
-        html: '<a class="more" href="' + val['url'] + '">Подробнее</a>'
+        html: '<a class="more" href="#news-id-' + val['id'] + '">Подробнее</a>'
       });
       _item = $('<li/>', {
-        'class': 'news-item'
+        'class': 'news-item',
+        'id': 'news-id-' + val['id']
       });
-      _item.append(_time).append(_title).append(_content).append(_actions);
+      _item.append(_time).append(_title).append(_content).append(_content_full).append(_actions);
       return $('#meta-news-container').append(_item);
+    });
+    return $('a.more').on('click', function(e) {
+      return darkBox(e);
     });
   });
 };
