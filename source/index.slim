@@ -257,15 +257,13 @@ html lang='ru'
             #calc.graph-data-item.clearfix
               .col.col--3
                 h3#description-title.description-title
-                  |551 млрд. рублей<br>Чистая прибыль компании за&nbsp;2013&nbsp;год
                 #description-text.description-text
-                  |ОАО «Газпром» — крупнейшая энергетическая компания в России. На компанию приходится 13% от всего объема мировой и 73% от объема российской добычи газа. Газпром входит в пятерку крупнейших производителей нефти в России, а также является крупнейшим владельцем генерирующих активов на ее территории.<br>Газпром входит в пятерку крупнейших производителей
               .col.col--4
                 .calculator
                   .calc-row.clearfix
                     label.label Сумма для инвестирования
                     .input
-                      input#calc-range-input.calc-input type='text' name='calc_value' value='440000'
+                      input#calc-range-input.calc-input type='text' name='calc_value'
                       #range-slider.no-ui-slider
                         #calc-range.slider
                         
@@ -273,13 +271,13 @@ html lang='ru'
                     label.label Выбор периода инвестирования
                     .input
                       label.input-label
-                        input type='radio' name='calc_period' value='0.25'
+                        input#calc-period-3 type='radio' name='calc_period' value='0.25'
                         |3 месяца
                       label.input-label.active
-                        input type='radio' checked='checked' name='calc_period' value='0.5'
+                        input#calc-period-6 type='radio' checked='checked' name='calc_period' value='0.5'
                         |6 месяцев
                       label.input-label
-                        input type='radio' name='calc_period' value='1'
+                        input#calc-period-12 type='radio' name='calc_period' value='1'
                         |12 месяцев
                         
                   .calc-row.clearfix
@@ -299,13 +297,12 @@ html lang='ru'
                           td#profit 508 596 руб.
                         tr
                           th Доход в % годовых
-                          td#profit-percent data-value='31.17' 31.17%
+                          td#profit-percent 31.17%
                         tr
                           th
                             ' Доход за 
-                            span#profit-time 6 
-                            ' месяцев
-                          td#profit-percent 68 234 руб.
+                            span#profit-time 6 месяцев
+                          td#profit-period 68 234 руб.
         .consultation
           h3.block-title Узнайте, как заработать на финансовых инструментах
           form#consultation-form.consultation-form name='consultation_form'

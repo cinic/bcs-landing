@@ -43,12 +43,23 @@ $(function() {
     $(this).val(val);
     return $('.calculator #range-value').text(val);
   });
+  $('#calc-range-input').on('focus', function() {
+    return $(this).blur();
+  });
   return $('input[name="calc_period"]').on('change', function() {
     var value;
     value = $('.calculator #calc-range-input').val().match(/([0-9\s]+)( ₽)/)[1].replace(/\s/g, "") * 1;
+    console.log(value);
     $('input[name="calc_period"]').parent().removeClass('active');
     $(this).parent().addClass('active');
-    return $('.calculator #profit').text(calcValue(value));
+    $('.calculator #profit').text(calcValue(value, value));
+    $('.calculator #profit-period').text(calcValue(value));
+    $('#stock-buy-date').html($(this).data('date_buy'));
+    $('#stock-sell-date').html($(this).data('date_sell'));
+    $('#stock-buy-price').html('по ' + $(this).data('price_buy') + ' руб');
+    $('#stock-sell-price').html('по ' + $(this).data('price_sell') + ' руб');
+    $('#profit-percent').html($(this).data('profit_percent') + ' %');
+    return $('#profit-time').html($(this).parent().text());
   });
 });
 
@@ -112,7 +123,7 @@ getChartData = function(elem) {
   var _ticker;
   _ticker = $(elem).val();
   return $.getJSON('data.json?ticker=' + _ticker, function(data) {
-    var _block_title, _change_perc, _change_pips, _close, _context, _current_price, _date, _exchange, _max, _min, _open, _time, _volume;
+    var _block_title, _calculator_12, _calculator_3, _calculator_6, _change_perc, _change_pips, _close, _company_text, _company_title, _context, _current_price, _date, _exchange, _max, _min, _open, _time, _volume;
     _context = $('#graph');
     _exchange = data['exchange'];
     _current_price = data['price']['current'];
@@ -127,6 +138,11 @@ getChartData = function(elem) {
     _time = data['time'];
     _date = data['date'];
     _block_title = data['block_title'];
+    _company_title = data['company']['title'];
+    _company_text = data['company']['text'];
+    _calculator_3 = data['calculator']['3'];
+    _calculator_6 = data['calculator']['6'];
+    _calculator_12 = data['calculator']['12'];
     $('#container-title span').html(_block_title);
     $('#card-change-pips, #card-change-perc', _context).removeClass('up down');
     $('#data-title', _context).html(_exchange);
@@ -147,7 +163,19 @@ getChartData = function(elem) {
     $('#card-list-min', _context).html(_min);
     $('#card-list-close', _context).html(_close);
     $('#card-list-volume', _context).html(_volume);
-    return $('#card-chart', _context).html('<img src="img/chart.jpg" width="560" height="324" alt="..."/>');
+    $('#card-chart', _context).html('<img src="img/chart.jpg" width="560" height="324" alt="..."/>');
+    $('#description-title').html(_company_title);
+    $('#description-text').html(_company_text);
+    $('#calc-period-3').data(_calculator_3);
+    $('#calc-period-6').data(_calculator_6);
+    $('#calc-period-12').data(_calculator_12);
+    $('#stock-buy-date').html(_calculator_6['date_buy']);
+    $('#stock-sell-date').html(_calculator_6['date_sell']);
+    $('#stock-buy-price').html('по ' + _calculator_6['price_buy'] + ' руб');
+    $('#stock-sell-price').html('по ' + _calculator_6['price_sell'] + ' руб');
+    $('#profit-percent').html(_calculator_6['profit_percent'] + ' %');
+    slider.noUiSlider.set(250000);
+    return $('input#calc-period-6').prop('checked', true).change();
   });
 };
 
@@ -163,11 +191,14 @@ Number.prototype.formatMoney = function(c, d, t) {
   return s + (j ? i.substr(0, j) + t : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, '$1' + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : '') + ' ₽';
 };
 
-calcValue = function(v) {
+calcValue = function(v, b) {
   var interval, percent, r;
-  percent = $('#profit-percent').data('value') * 1;
+  percent = $('input[name="calc_period"]:checked').data('profit_percent') * 1;
   interval = $('input[name="calc_period"]:checked').val() * 1;
   r = v / 100 * percent * interval;
+  if (b != null) {
+    r = r + b;
+  }
   return (Math.floor(r, 0)).formatMoney(0, '', ' ');
 };
 
@@ -198,8 +229,9 @@ if (slider != null) {
   slider.noUiSlider.on('update', function(values, handle) {
     var rawValue;
     rawValue = values[handle] * 1;
-    valueInput.value = (values[handle] * 1).formatMoney(0, '', ' ');
-    return $('.calculator #profit').text(calcValue(values[handle] * 1));
+    valueInput.value = rawValue.formatMoney(0, '', ' ');
+    $('.calculator #profit').text(calcValue(rawValue, rawValue));
+    return $('.calculator #profit-period').text(calcValue(rawValue));
   });
   valueInput.addEventListener('change', function() {
     return slider.noUiSlider.set([null, this.value]);

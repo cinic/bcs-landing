@@ -488,6 +488,8 @@ body {
             color: #303d59;
             border-radius: 18px;
             outline: none;
+
+            &:disabled { color: #303d59 !important; }
           }
           table {
             width: 100%;
@@ -500,6 +502,7 @@ body {
             }
             th,
             td {
+              width: 50%;
               padding: 0 15px;
               line-height: 40px;
               font-weight: 300;

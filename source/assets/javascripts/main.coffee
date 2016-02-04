@@ -41,11 +41,21 @@ $ ->
     $(@).val( val )
     $('.calculator #range-value').text( val )
 
+  $( '#calc-range-input' ).on 'focus', ->
+    $( @ ).blur()
   $('input[name="calc_period"]').on 'change', ->
     value = $('.calculator #calc-range-input').val().match(/([0-9\s]+)( ₽)/)[1].replace(/\s/g, "") * 1
+    console.log value
     $( 'input[name="calc_period"]' ).parent().removeClass('active')
     $( @ ).parent().addClass('active')
-    $('.calculator #profit').text( calcValue( value) )
+    $('.calculator #profit').text( calcValue( value, value ) )
+    $('.calculator #profit-period').text( calcValue( value ) )
+    $( '#stock-buy-date' ).html( $( @ ).data('date_buy') )
+    $( '#stock-sell-date' ).html( $( @ ).data('date_sell') )
+    $( '#stock-buy-price' ).html 'по ' + $( @ ).data('price_buy') + ' руб'
+    $( '#stock-sell-price' ).html 'по ' + $( @ ).data('price_sell') + ' руб'
+    $( '#profit-percent' ).html( $( @ ).data('profit_percent') + ' %' )
+    $( '#profit-time' ).html( $( @ ).parent().text() )
 
 
 getNews = ( elem ) ->
@@ -92,6 +102,13 @@ getChartData = ( elem ) ->
     _time = data['time']
     _date = data['date']
     _block_title = data['block_title']
+    # calculator data
+    _company_title = data['company']['title']
+    _company_text = data['company']['text']
+    _calculator_3 = data['calculator']['3']
+    _calculator_6 = data['calculator']['6']
+    _calculator_12 = data['calculator']['12']
+
     $( '#container-title span' ).html _block_title
     $( '#card-change-pips, #card-change-perc', _context ).removeClass 'up down'
     $( '#data-title', _context ).html _exchange
@@ -113,6 +130,19 @@ getChartData = ( elem ) ->
     $( '#card-list-volume', _context ).html _volume
     $( '#card-chart', _context ).html '<img src="img/chart.jpg" width="560" height="324" alt="..."/>'
 
+    $( '#description-title' ).html _company_title
+    $( '#description-text' ).html _company_text
+    $( '#calc-period-3' ).data( _calculator_3 )
+    $( '#calc-period-6' ).data( _calculator_6 )
+    $( '#calc-period-12' ).data( _calculator_12 )
+    $( '#stock-buy-date' ).html _calculator_6['date_buy']
+    $( '#stock-sell-date' ).html _calculator_6['date_sell']
+    $( '#stock-buy-price' ).html 'по ' + _calculator_6['price_buy'] + ' руб'
+    $( '#stock-sell-price' ).html 'по ' + _calculator_6['price_sell'] + ' руб'
+    $( '#profit-percent' ).html _calculator_6['profit_percent'] + ' %'
+    slider.noUiSlider.set(250000)
+    $( 'input#calc-period-6' ).prop('checked', true).change()
+
 # Number formatter
 Number::formatMoney = (c, d, t) ->
 	n = this
@@ -124,11 +154,12 @@ Number::formatMoney = (c, d, t) ->
 	j = if (j = i.length) > 3 then j % 3 else 0
 	s + (if j then i.substr(0, j) + t else '') + i.substr(j).replace(/(\d{3})(?=\d)/g, '$1' + t) + (if c then d + Math.abs(n - i).toFixed(c).slice(2) else '') + ' ₽'
 
-calcValue = (v) ->
-	percent = $( '#profit-percent' ).data( 'value' ) * 1
-	interval = $( 'input[name="calc_period"]:checked' ).val() * 1
-	r = v / 100 * percent * interval
-	(Math.floor(r,0)).formatMoney(0, '', ' ')
+calcValue = (v, b) ->
+  percent = $( 'input[name="calc_period"]:checked' ).data( 'profit_percent' ) * 1
+  interval = $( 'input[name="calc_period"]:checked' ).val() * 1
+  r = v / 100 * percent * interval
+  r = r + b if b?
+  (Math.floor(r,0)).formatMoney(0, '', ' ')
 
 slider = document.getElementById('calc-range')
 if slider?
@@ -149,9 +180,10 @@ if slider?
 				encoder: (value) ->
 					value / 1000
 	slider.noUiSlider.on 'update', ( values, handle ) ->
-		rawValue = values[handle] * 1
-		valueInput.value = (values[handle] * 1).formatMoney(0, '', ' ')
-		$('.calculator #profit').text( calcValue(values[handle] * 1) )
+    rawValue = values[handle] * 1
+    valueInput.value = (rawValue).formatMoney(0, '', ' ')
+    $('.calculator #profit').text( calcValue(rawValue, rawValue) )
+    $('.calculator #profit-period').text( calcValue(rawValue) )
 
 	valueInput.addEventListener 'change', ->
 		slider.noUiSlider.set([null, this.value])

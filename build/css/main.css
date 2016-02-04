@@ -529,6 +529,9 @@ body .main .graph-container .graph-data .calc-row .calc-input {
   border-radius: 18px;
   outline: none;
 }
+body .main .graph-container .graph-data .calc-row .calc-input:disabled {
+  color: #303d59 !important;
+}
 body .main .graph-container .graph-data .calc-row table {
   width: 100%;
   font-weight: 300;
@@ -540,6 +543,7 @@ body .main .graph-container .graph-data .calc-row table tr:nth-child(even) {
 }
 body .main .graph-container .graph-data .calc-row table th,
 body .main .graph-container .graph-data .calc-row table td {
+  width: 50%;
   padding: 0 15px;
   line-height: 40px;
   font-weight: 300;

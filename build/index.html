@@ -256,19 +256,15 @@
             </div>
             <div class="graph-data-item clearfix" id="calc">
               <div class="col col--3">
-                <h3 class="description-title" id="description-title">
-                  551 млрд. рублей<br>Чистая прибыль компании за&nbsp;2013&nbsp;год
-                </h3>
-                <div class="description-text" id="description-text">
-                  ОАО «Газпром» — крупнейшая энергетическая компания в России. На компанию приходится 13% от всего объема мировой и 73% от объема российской добычи газа. Газпром входит в пятерку крупнейших производителей нефти в России, а также является крупнейшим владельцем генерирующих активов на ее территории.<br>Газпром входит в пятерку крупнейших производителей
-                </div>
+                <h3 class="description-title" id="description-title"></h3>
+                <div class="description-text" id="description-text"></div>
               </div>
               <div class="col col--4">
                 <div class="calculator">
                   <div class="calc-row clearfix">
                     <label class="label">Сумма для инвестирования</label>
                     <div class="input">
-                      <input class="calc-input" id="calc-range-input" name="calc_value" type="text" value="440000" />
+                      <input class="calc-input" id="calc-range-input" name="calc_value" type="text" />
                       <div class="no-ui-slider" id="range-slider">
                         <div class="slider" id="calc-range"></div>
                       </div>
@@ -277,7 +273,7 @@
                   <div class="calc-row clearfix">
                     <label class="label">Выбор периода инвестирования</label>
                     <div class="input">
-                      <label class="input-label"><input name="calc_period" type="radio" value="0.25" />3 месяца</label><label class="input-label active"><input checked="checked" name="calc_period" type="radio" value="0.5" />6 месяцев</label><label class="input-label"><input name="calc_period" type="radio" value="1" />12 месяцев</label>
+                      <label class="input-label"><input id="calc-period-3" name="calc_period" type="radio" value="0.25" />3 месяца</label><label class="input-label active"><input checked="checked" id="calc-period-6" name="calc_period" type="radio" value="0.5" />6 месяцев</label><label class="input-label"><input id="calc-period-12" name="calc_period" type="radio" value="1" />12 месяцев</label>
                     </div>
                   </div>
                   <div class="calc-row clearfix">
@@ -312,15 +308,15 @@
                           <th>
                             Доход в % годовых
                           </th>
-                          <td data-value="31.17" id="profit-percent">
+                          <td id="profit-percent">
                             31.17%
                           </td>
                         </tr>
                         <tr>
                           <th>
-                            Доход за  <span id="profit-time">6 </span>месяцев 
+                            Доход за  <span id="profit-time">6 месяцев</span>
                           </th>
-                          <td id="profit-percent">
+                          <td id="profit-period">
                             68 234 руб.
                           </td>
                         </tr>
