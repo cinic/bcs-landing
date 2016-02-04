@@ -521,6 +521,7 @@ body .main .graph-container .graph-data .calc-row .calc-input {
   display: inline-block;
   padding: 0 25px;
   width: 200px;
+  height: 30px;
   line-height: 30px;
   font-size: 14px;
   font-weight: 700;
@@ -578,6 +579,7 @@ body .consultation .consultation-form .form-input {
   border-radius: 12px;
   color: #062452;
   outline: none;
+  vertical-align: top;
 }
 body .consultation .consultation-form .form-input::-webkit-input-placeholder {
   font-family: 'HelveticaNeueCyr', Helvetica, sans-serif;
@@ -614,6 +616,7 @@ body .consultation .consultation-form .form-submit {
   border: 1px solid transparent;
   border-radius: 20px;
   background: #e8b942;
+  vertical-align: top;
 }
 body .meta {
   background: url("../img/news-bg.jpg") no-repeat center top;
