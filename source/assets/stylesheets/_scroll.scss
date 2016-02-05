@@ -1,0 +1,28 @@
+/*BCS skin*/
+.scrollable {
+  &.bcs-skin {
+    padding-right: 17px;
+    .scroll-bar {
+      border: 1px solid #e4e6ea;
+      border-radius: 2px;
+      background-color: white;
+
+      .thumb {
+        background-color: #f1b900;
+      }
+
+      &:hover {
+        .thumb {
+          background-color: #062452;
+        }
+      }
+      &.vertical {
+        width: 10px;
+        .thumb {
+          width: 6px;
+          margin-left: 2px;
+        }
+      }
+    }
+  }
+}

@@ -8,6 +8,7 @@ html lang='ru'
     link rel='stylesheet' href='css/vendor/normalize.css'
     link rel='stylesheet' href='css/vendor/selectize.css'
     link rel='stylesheet' href='css/vendor/nouislider.css'
+    link rel='stylesheet' href='css/vendor/custom-scrollbar.css'
     link rel='stylesheet' href='css/main.css'
   body
     header.header
@@ -101,9 +102,10 @@ html lang='ru'
                     input.radio-input type='radio' value='urka' name='stock_ticker' data-target='#stock-news'
                     ' Уралкалий-ао
               .stock-col.col--2
-                #stock-news.news-container.clearfix
-                  h2.block-title Новости и аналитика:
-                  .news-item
+                .news-container-wrap.clearfix
+                  #stock-news.news-container.bcs-skin.clearfix
+                    h2.block-title Новости и аналитика:
+                    .news-item
                   
             #crude.tab-body.clearfix
               .stock-col
@@ -417,4 +419,5 @@ html lang='ru'
     script src='js/vendor/selectize.js'
     script src='js/vendor/wnumb.js'
     script src='js/vendor/nouislider.js'
+    script src='js/vendor/custom-scrollbar.js'
     script src='js/main.js'

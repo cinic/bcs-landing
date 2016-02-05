@@ -55,6 +55,8 @@ $ ->
     $( '#stock-sell-price' ).html 'по ' + $( @ ).data('price_sell') + ' руб'
     $( '#profit-percent' ).html( $( @ ).data('profit_percent') + ' %' )
     $( '#profit-time' ).html( $( @ ).parent().text() )
+  # Custom scroll
+  $( '.tab-content .news-container' ).customScrollbar()
 
 darkBox = ( e ) ->
   e.preventDefault()
@@ -104,6 +106,7 @@ getLastNews = ( elem ) ->
     _content.html( data['news'][0]['teaser'] )
     $( '.news-item', _target ).html('')
     $( '.news-item', _target ).append( _time ).append( _title ).append( _content )
+    $( '.tab-content .news-container' ).customScrollbar()
 
 getChartData = ( elem ) ->
   _ticker = $(elem).val()

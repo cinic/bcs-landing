@@ -46,7 +46,7 @@ $(function() {
   $('#calc-range-input').on('focus', function() {
     return $(this).blur();
   });
-  return $('input[name="calc_period"]').on('change', function() {
+  $('input[name="calc_period"]').on('change', function() {
     var value;
     value = $('.calculator #calc-range-input').val().match(/([0-9\s]+)( ₽)/)[1].replace(/\s/g, "") * 1;
     $('input[name="calc_period"]').parent().removeClass('active');
@@ -60,6 +60,7 @@ $(function() {
     $('#profit-percent').html($(this).data('profit_percent') + ' %');
     return $('#profit-time').html($(this).parent().text());
   });
+  return $('.tab-content .news-container').customScrollbar();
 });
 
 darkBox = function(e) {
@@ -147,7 +148,8 @@ getLastNews = function(elem) {
     _title.html('<a href="' + data['news'][0]['url'] + '">' + data['news'][0]['title'] + '</a>');
     _content.html(data['news'][0]['teaser']);
     $('.news-item', _target).html('');
-    return $('.news-item', _target).append(_time).append(_title).append(_content);
+    $('.news-item', _target).append(_time).append(_title).append(_content);
+    return $('.tab-content .news-container').customScrollbar();
   });
 };
 
