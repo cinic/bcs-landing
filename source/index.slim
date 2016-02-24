@@ -17,14 +17,14 @@ html lang='ru'
           img src='img/brand.png' alt='BCS Broker'
         ul.top-nav
           li
-            i.icon.phone
-            ' 8 800 500 55 45
-          li
+            a.icon.phone href='tel:88005005545'
+            span.hidden-phone 8 800 500 55 45
+          li.hidden-phone
             a href='#' Получить консультацию
-          li
+          li.hidden-phone
             a.open-account href='https://broker.ru/become_customer_esia' Открыть счёт онлайн
             span.comment через gosuslugi.ru
-    div.main.clearfix
+    .main.clearfix
       .layout
         h1.section-title.white Время инвестировать в ликвидные инструменты
         #tickers.tab-container.clearfix
@@ -72,7 +72,7 @@ html lang='ru'
                   label.custom-radio
                     input.radio-input type='radio' value='mtss' name='stock_ticker' data-target='#stock-news'
                     ' МТС-ао
-              .stock-col
+              .stock-col.hidden-phone
                 .row
                   label.custom-radio
                     input.radio-input type='radio' value='ogkb' name='stock_ticker' data-target='#stock-news'
@@ -101,7 +101,7 @@ html lang='ru'
                   label.custom-radio
                     input.radio-input type='radio' value='urka' name='stock_ticker' data-target='#stock-news'
                     ' Уралкалий-ао
-              .stock-col.col--2
+              .stock-col.col--2.hidden-phone
                 .news-container-wrap.clearfix
                   #stock-news.news-container.bcs-skin.clearfix
                     h2.block-title Новости и аналитика:
@@ -129,7 +129,7 @@ html lang='ru'
                   label.custom-radio
                     input.radio-input type='radio' value='gmkn' name='crude_ticker' data-target='#crude-news'
                     ' Никель
-              .stock-col
+              .stock-col.hidden-phone
                 .row
                   label.custom-radio
                     input.radio-input type='radio' value='lkoh' name='crude_ticker' data-target='#crude-news'
@@ -146,7 +146,7 @@ html lang='ru'
                   label.custom-radio
                     input.radio-input type='radio' value='mtss' name='crude_ticker' data-target='#crude-news'
                     ' Цинк
-              .stock-col.col--2
+              .stock-col.col--2.hidden-phone
                 #crude-news.news-container.clearfix
                   h2.block-title Новости и аналитика:
                   .news-item
@@ -181,7 +181,7 @@ html lang='ru'
                   label.custom-radio
                     input.radio-input type='radio' value='lkoh' name='indicies_ticker' data-target='#indicies-news'
                     ' Dow (DJIA)
-              .stock-col
+              .stock-col.hidden-phone
                 .row
                   label.custom-radio
                     input.radio-input type='radio' value='gazp' name='indicies_ticker' data-target='#indicies-news'
@@ -202,7 +202,7 @@ html lang='ru'
                   label.custom-radio
                     input.radio-input type='radio' value='gmkn' name='indicies_ticker' data-target='#indicies-news'
                     ' IBOVESPA
-              .stock-col.col--2
+              .stock-col.col--2.hidden-phone
                 #indicies-news.news-container.clearfix
                   h2.block-title Новости и аналитика:
                   .news-item
@@ -212,12 +212,13 @@ html lang='ru'
                     .news-content
                       p Антимонопольный комитет Украины решил оштрафовать Газпром на 85 млрд гривен ($3,47 млрд) за злоупотребление монопольным положением на рынке транзита газа по магистральным трубопроводам по территории Украины.
         .graph-container
-          .switch.clearfix
-            a.item.active.graph href='#graph' График
-            a.item.calc href='#calc' Калькулятор
-          h3#container-title.block-title
-            ' Оцените доход от инвестирования в 
-            span акции Газпром
+          .clearfix
+            h3#container-title.block-title
+              ' Оцените доход от инвестирования в 
+              span акции Газпром
+            .switch.clearfix
+              a.item.active.graph href='#graph' График
+              a.item.calc href='#calc' Калькулятор
           .graph-data
             #graph.graph-data-item.active.clearfix
               .col
@@ -230,6 +231,8 @@ html lang='ru'
                   #card-ticker.card-ticker
                   time#card-time.card-time
                   time#card-date.card-date
+                .col.col--2.hidden-desktop
+                  #card-chart-mobile.card-chart 1
                 .col.col--1
                   ul.card-list
                     li.clearfix
@@ -254,10 +257,10 @@ html lang='ru'
                       span.label Объём:
                       span#card-list-volume.val
               .col.col--2
-                #card-chart.card-chart 1
+                #card-chart.card-chart.hidden-phone 1
               
             #calc.graph-data-item.clearfix
-              .col.col--3
+              .col.col--3.hidden-phone
                 h3#description-title.description-title
                 #description-text.description-text
               .col.col--4
@@ -270,25 +273,31 @@ html lang='ru'
                         #calc-range.slider
                         
                   .calc-row.clearfix
-                    label.label Выбор периода инвестирования
+                    label.label.nowrap
+                      ' Выбор периода инвестирования 
+                      span.hidden-desktop
+                        |(месяц)
                     .input
                       label.input-label
                         input#calc-period-3 type='radio' name='calc_period' value='0.25'
-                        |3 месяца
+                        ' 3 
+                        span месяца
                       label.input-label.active
                         input#calc-period-6 type='radio' checked='checked' name='calc_period' value='0.5'
-                        |6 месяцев
+                        '6 
+                        span месяцев
                       label.input-label
                         input#calc-period-12 type='radio' name='calc_period' value='1'
-                        |12 месяцев
+                        ' 12 
+                        span месяцев
                         
                   .calc-row.clearfix
                     .label
-                      label.label
+                      label.label.nowrap
                         ' Акции куплены: 
                         #stock-buy-date 06.10.2014
                         #stock-buy-price по 222.30 руб
-                      label.label
+                      label.label.nowrap
                         ' Акции проданы: 
                         #stock-sell-date 06.10.2014
                         #stock-sell-price по 222.30 руб
@@ -305,64 +314,77 @@ html lang='ru'
                             ' Доход за 
                             span#profit-time 6 месяцев
                           td#profit-period 68 234 руб.
+              .col.col--3.hidden-desktop
+                h3#description-title-mob.description-title
+                #description-text-mob.description-text
+    .consultation-wrapper.clearfix
+      .layout
         .consultation
           h3.block-title Узнайте, как заработать на финансовых инструментах
           form#consultation-form.consultation-form name='consultation_form'
             .row
-              select.form-select name='city' aria-invalid='false'
-                option selected='selected' value='108' Москва
-                option value='134' Новосибирск
-                option value='113' Альметьевск
-                option value='105' Астрахань
-                option value='79' Барнаул
-                option value='132' Владивосток
-                option value='147' Волгоград
-                option value='63' Воронеж
-                option value='14' Екатеринбург
-                option value='168' Ижевск
-                option value='88' Иркутск
-                option value='146' Казань
-                option value='27' Калининград
-                option value='37' Кемерово
-                option value='21' Краснодар
-                option value='116' Красноярск
-                option value='92' Лимассол
-                option value='112' Липецк
-                option value='149' Нижний Новгород
-                option value='152' Новокузнецк
-                option value='64' Норильск
-                option value='97' Омск
-                option value='23' Оренбург
-                option value='170' Пенза
-                option value='62' Пермь
-                option value='89' Ростов-на-Дону
-                option value='19' Самара
-                option value='15' Санкт-Петербург
-                option value='81' Саратов
-                option value='161' Сочи
-                option value='129' Ставрополь
-                option value='135' Стерлитамак
-                option value='114' Сургут
-                option value='153' Таганрог
-                option value='29' Тольятти
-                option value='90' Томск
-                option value='53' Тула
-                option value='69' Тюмень
-                option value='167' Уфа
-                option value='57' Челябинск
-                option value='12' Череповец
-                option value='133' Ярославль
-                option value='0' Другой город
-              input.form-input type='text' name='full_name' placeholder='ФИО'
-              input.form-input type='text' name='phone' placeholder='Телефон'
-              input.form-input type='text' name='email' placeholder='E-mail'
+              span.mob-row
+                label.hidden-desktop for='#consultation-form-city' Город
+                select.form-select#consultation-form-city name='city' aria-invalid='false'
+                  option selected='selected' value='108' Москва
+                  option value='134' Новосибирск
+                  option value='113' Альметьевск
+                  option value='105' Астрахань
+                  option value='79' Барнаул
+                  option value='132' Владивосток
+                  option value='147' Волгоград
+                  option value='63' Воронеж
+                  option value='14' Екатеринбург
+                  option value='168' Ижевск
+                  option value='88' Иркутск
+                  option value='146' Казань
+                  option value='27' Калининград
+                  option value='37' Кемерово
+                  option value='21' Краснодар
+                  option value='116' Красноярск
+                  option value='92' Лимассол
+                  option value='112' Липецк
+                  option value='149' Нижний Новгород
+                  option value='152' Новокузнецк
+                  option value='64' Норильск
+                  option value='97' Омск
+                  option value='23' Оренбург
+                  option value='170' Пенза
+                  option value='62' Пермь
+                  option value='89' Ростов-на-Дону
+                  option value='19' Самара
+                  option value='15' Санкт-Петербург
+                  option value='81' Саратов
+                  option value='161' Сочи
+                  option value='129' Ставрополь
+                  option value='135' Стерлитамак
+                  option value='114' Сургут
+                  option value='153' Таганрог
+                  option value='29' Тольятти
+                  option value='90' Томск
+                  option value='53' Тула
+                  option value='69' Тюмень
+                  option value='167' Уфа
+                  option value='57' Челябинск
+                  option value='12' Череповец
+                  option value='133' Ярославль
+                  option value='0' Другой город
+              span.mob-row
+                label.hidden-desktop for='#consultation-form-full-name' Имя
+                input.form-input#consultation-form-full-name type='text' name='full_name' placeholder='ФИО'
+              span.mob-row
+                label.hidden-desktop for='#consultation-form-phone' Телефон
+                input.form-input#consultation-form-phone type='text' name='phone' placeholder='Телефон'
+              span.mob-row
+                label.hidden-desktop for='#consultation-form-email' E-mail
+                input.form-input#consultation-form-email type='text' name='email' placeholder='E-mail'
               input.form-submit type='submit' name='ok' value='Получить консультацию'
-    div.meta.clearfix
+    .meta.clearfix
       .layout
         h3.section-title Новости и аналитика:
         ul#meta-news-container.meta-news-container
         
-        .consultation
+        .consultation.hidden-phone
           h3.block-title Узнайте, как заработать на финансовых инструментах
           form#consultation-form-2.consultation-form.grey name='consultation_form_2'
             .row
@@ -413,6 +435,68 @@ html lang='ru'
               input.form-input type='text' name='full_name' placeholder='ФИО'
               input.form-input type='text' name='phone' placeholder='Телефон'
               input.form-input type='text' name='email' placeholder='E-mail'
+              input.form-submit type='submit' name='ok' value='Получить консультацию'
+    .consultation-wrapper.grey.clearfix.hidden-desktop
+      .layout        
+        .consultation
+          h3.block-title Узнайте, как заработать на финансовых инструментах
+          form#consultation-form-3.consultation-form.grey name='consultation_form_3'
+            .row
+              span.mob-row
+                label.hidden-desktop for='#consultation-form-3-city' Город
+                select.form-select#consultation-form-3-city name='city' aria-invalid='false'
+                  option selected='selected' value='108' Москва
+                  option value='134' Новосибирск
+                  option value='113' Альметьевск
+                  option value='105' Астрахань
+                  option value='79' Барнаул
+                  option value='132' Владивосток
+                  option value='147' Волгоград
+                  option value='63' Воронеж
+                  option value='14' Екатеринбург
+                  option value='168' Ижевск
+                  option value='88' Иркутск
+                  option value='146' Казань
+                  option value='27' Калининград
+                  option value='37' Кемерово
+                  option value='21' Краснодар
+                  option value='116' Красноярск
+                  option value='92' Лимассол
+                  option value='112' Липецк
+                  option value='149' Нижний Новгород
+                  option value='152' Новокузнецк
+                  option value='64' Норильск
+                  option value='97' Омск
+                  option value='23' Оренбург
+                  option value='170' Пенза
+                  option value='62' Пермь
+                  option value='89' Ростов-на-Дону
+                  option value='19' Самара
+                  option value='15' Санкт-Петербург
+                  option value='81' Саратов
+                  option value='161' Сочи
+                  option value='129' Ставрополь
+                  option value='135' Стерлитамак
+                  option value='114' Сургут
+                  option value='153' Таганрог
+                  option value='29' Тольятти
+                  option value='90' Томск
+                  option value='53' Тула
+                  option value='69' Тюмень
+                  option value='167' Уфа
+                  option value='57' Челябинск
+                  option value='12' Череповец
+                  option value='133' Ярославль
+                  option value='0' Другой город
+              span.mob-row
+                label.hidden-desktop for='#consultation-form-3-full-name' Имя
+                input.form-input#consultation-form-3-full-name type='text' name='full_name' placeholder='ФИО'
+              span.mob-row
+                label.hidden-desktop for='#consultation-form-3-phone' Телефон
+                input.form-input#consultation-form-3-phone type='text' name='phone' placeholder='Телефон'
+              span.mob-row
+                label.hidden-desktop for='#consultation-form-3-email' E-mail
+                input.form-input#consultation-form-3-email type='text' name='email' placeholder='E-mail'
               input.form-submit type='submit' name='ok' value='Получить консультацию'
     
     script src='js/vendor/jquery-2.1.4.js'

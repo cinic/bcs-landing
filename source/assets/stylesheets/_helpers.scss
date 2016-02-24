@@ -21,3 +21,28 @@
 	max-width: 100%;
 	height: auto;
 }
+
+.hidden-phone {
+  display: none;
+  @media only screen and (min-width : 768px) {
+    display: block;
+  }
+}
+.hidden-desktop {
+  @media only screen and (min-width : 768px) {
+    display: none;
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
+  &.label {
+    div { display: inline; }
+  }
+  @media only screen and (min-width : 768px) {
+    white-space: normal;
+    &.label {
+      div { display: block; }
+    }
+  }
+}

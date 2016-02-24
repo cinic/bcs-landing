@@ -197,9 +197,10 @@ getChartData = function(elem) {
     $('#card-list-min', _context).html(_min);
     $('#card-list-close', _context).html(_close);
     $('#card-list-volume', _context).html(_volume);
-    $('#card-chart', _context).html('<img src="img/chart.jpg" width="560" height="324" alt="..."/>');
-    $('#description-title').html(_company_title);
-    $('#description-text').html(_company_text);
+    $('#card-chart', _context).html('<img src="img/chart.jpg" alt="..."/>');
+    $('#card-chart-mobile', _context).html('<img src="img/chart.jpg" alt="..."/>');
+    $('#description-title,#description-title-mob').html(_company_title);
+    $('#description-text,#description-text-mob').html(_company_text);
     $('#calc-period-3').data(_calculator_3);
     $('#calc-period-6').data(_calculator_6);
     $('#calc-period-12').data(_calculator_12);
