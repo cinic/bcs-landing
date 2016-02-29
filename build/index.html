@@ -13,192 +13,204 @@
   </head>
   <body>
     <header class="header">
-      <div class="layout clearfix">
-        <a class="brand" href="#" title="BCS Broker"><img alt="BCS Broker" src="img/brand.png" /></a>
-        <ul class="top-nav">
+      <div class="container clearfix">
+        <a class="brand pull-left" href="#" title="BCS Broker"><img alt="BCS Broker" src="img/brand.png" /></a>
+        <ul class="top-nav pull-right">
           <li>
-            <a class="icon phone" href="tel:88005005545"></a><span class="hidden-phone">8 800 500 55 45</span>
+            <a class="icon phone" href="tel:88005005545"></a><span class="hidden-xs hidden-sm">8 800 500 55 45</span>
           </li>
-          <li class="hidden-phone">
+          <li class="hidden-xs hidden-sm">
             <a href="#">Получить консультацию</a>
           </li>
-          <li class="hidden-phone">
+          <li class="hidden-xs hidden-sm">
             <a class="open-account" href="https://broker.ru/become_customer_esia">Открыть счёт онлайн</a><span class="comment">через gosuslugi.ru</span>
           </li>
         </ul>
       </div>
     </header>
     <div class="main clearfix">
-      <div class="layout">
+      <div class="container">
         <h1 class="section-title white">
           Время инвестировать в ликвидные инструменты
         </h1>
-        <div class="tab-container clearfix" id="tickers">
-          <div class="tab-bar">
-            <a class="tab active" href="#stock"><span><i class="icon stock"></i>Акции</span></a><a class="tab" href="#crude"><span><i class="icon crude"></i>Сырье</span></a><a class="tab" href="#indicies"><span><i class="icon indicies"></i>Биржевые индексы </span></a>
-          </div>
-          <div class="tab-content">
-            <div class="tab-body active clearfix" id="stock">
-              <div class="stock-col">
-                <div class="row">
-                  <label class="custom-radio checked"><input checked="checked" class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="gazp" />ГАЗПРОМ ао     </label>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="tab-container clearfix" id="tickers">
+              <div class="row">
+                <div class="tab-bar col-sm-3">
+                  <a class="tab active" href="#stock"><span><i class="icon stock"></i>Акции</span></a><a class="tab" href="#crude"><span><i class="icon crude"></i>Сырье</span></a><a class="tab" href="#indicies"><span><i class="icon indicies"></i>Биржевые индексы </span></a>
                 </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="avaz" />АВТОВАЗ ао </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="aflt" />Аэрофлот </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="vtbr" />ВТБ ао </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="gmkn" />ГМКНорНик </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="lkoh" />ЛУКОЙЛ ао </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="mtss" />МТС-ао </label>
-                </div>
-              </div>
-              <div class="stock-col hidden-phone">
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="ogkb" />ОГК-5 ао     </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="rosn" />Роснефть ао </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="rtkm" />Ростел-ао </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="sber" />Сбербанк </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="chmf" />СевСт-ао </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="sngs" />Сургнфгз ао </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="urka" />Уралкалий-ао </label>
-                </div>
-              </div>
-              <div class="stock-col col--2 hidden-phone">
-                <div class="news-container-wrap clearfix">
-                  <div class="news-container bcs-skin clearfix" id="stock-news">
-                    <h2 class="block-title">
-                      Новости и аналитика:
-                    </h2>
-                    <div class="news-item"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="tab-body clearfix" id="crude">
-              <div class="stock-col">
-                <div class="row">
-                  <label class="custom-radio checked"><input checked="checked" class="radio-input" data-target="#crude-news" name="crude_ticker" type="radio" value="brent" />Нефть Brent     </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#crude-news" name="crude_ticker" type="radio" value="avaz" />Золото </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#crude-news" name="crude_ticker" type="radio" value="aflt" />Алюминий </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#crude-news" name="crude_ticker" type="radio" value="vtbr" />Медь </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#crude-news" name="crude_ticker" type="radio" value="gmkn" />Никель </label>
-                </div>
-              </div>
-              <div class="stock-col hidden-phone">
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#crude-news" name="crude_ticker" type="radio" value="lkoh" />Палладий </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#crude-news" name="crude_ticker" type="radio" value="mtss" />Платина </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#crude-news" name="crude_ticker" type="radio" value="lkoh" />Серебро </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#crude-news" name="crude_ticker" type="radio" value="mtss" />Цинк </label>
-                </div>
-              </div>
-              <div class="stock-col col--2 hidden-phone">
-                <div class="news-container clearfix" id="crude-news">
-                  <h2 class="block-title">
-                    Новости и аналитика:
-                  </h2>
-                  <div class="news-item">
-                    <time class="date" datetime="2016-02-01T12:12:20">25.01.2016</time>
-                    <h3 class="news-title">
-                      <a href="#">Завтрак инвестора:<br>Украина решила оштрафовать Газпром на $3,5 млрд</a>
-                    </h3>
-                    <div class="news-content">
-                      <p>
-                        Антимонопольный комитет Украины решил оштрафовать Газпром на 85 млрд гривен ($3,47 млрд) за злоупотребление монопольным положением на рынке транзита газа по магистральным трубопроводам по территории Украины.
-                      </p>
+                <div class="tab-content col-sm-9">
+                  <div class="row">
+                    <div class="tab-body active clearfix" id="stock">
+                      <div class="stock-col col-sm-3">
+                        <div class="row-group">
+                          <label class="custom-radio checked"><input checked="checked" class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="gazp" />ГАЗПРОМ ао     </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="avaz" />АВТОВАЗ ао </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="aflt" />Аэрофлот </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="vtbr" />ВТБ ао </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="gmkn" />ГМКНорНик </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="lkoh" />ЛУКОЙЛ ао </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="mtss" />МТС-ао </label>
+                        </div>
+                      </div>
+                      <div class="stock-col col-sm-3">
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="ogkb" />ОГК-5 ао     </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="rosn" />Роснефть ао </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="rtkm" />Ростел-ао </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="sber" />Сбербанк </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="chmf" />СевСт-ао </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="sngs" />Сургнфгз ао </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#stock-news" name="stock_ticker" type="radio" value="urka" />Уралкалий-ао </label>
+                        </div>
+                      </div>
+                      <div class="stock-col col-sm-6 hidden-xs white-bg">
+                        <div class="news-container-wrap clearfix">
+                          <div class="news-container bcs-skin clearfix" id="stock-news">
+                            <h2 class="block-title">
+                              Новости и аналитика:
+                            </h2>
+                            <div class="news-item"></div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="tab-body clearfix" id="indicies">
-              <div class="stock-col">
-                <div class="row">
-                  <label class="custom-radio checked"><input checked="checked" class="radio-input" data-target="#indicies-news" name="indicies_ticker" type="radio" value="micex" />ММВБ </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#indicies-news" name="indicies_ticker" type="radio" value="avaz" />РТС </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#indicies-news" name="indicies_ticker" type="radio" value="aflt" />ММВБ-10 </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#indicies-news" name="indicies_ticker" type="radio" value="vtbr" />РТС-2 </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#indicies-news" name="indicies_ticker" type="radio" value="gmkn" />KASE </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#indicies-news" name="indicies_ticker" type="radio" value="lkoh" />Dow (DJIA) </label>
-                </div>
-              </div>
-              <div class="stock-col hidden-phone">
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#indicies-news" name="indicies_ticker" type="radio" value="gazp" />NASDAQ </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#indicies-news" name="indicies_ticker" type="radio" value="avaz" />S&amp;P 500 </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#indicies-news" name="indicies_ticker" type="radio" value="aflt" />Nikkei 225 </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#indicies-news" name="indicies_ticker" type="radio" value="vtbr" />Hang Seng </label>
-                </div>
-                <div class="row">
-                  <label class="custom-radio"><input class="radio-input" data-target="#indicies-news" name="indicies_ticker" type="radio" value="gmkn" />IBOVESPA </label>
-                </div>
-              </div>
-              <div class="stock-col col--2 hidden-phone">
-                <div class="news-container clearfix" id="indicies-news">
-                  <h2 class="block-title">
-                    Новости и аналитика:
-                  </h2>
-                  <div class="news-item">
-                    <time class="date" datetime="2016-02-01T12:12:20">25.01.2016</time>
-                    <h3 class="news-title">
-                      <a href="#">Завтрак инвестора:<br>Украина решила оштрафовать Газпром на $3,5 млрд</a>
-                    </h3>
-                    <div class="news-content">
-                      <p>
-                        Антимонопольный комитет Украины решил оштрафовать Газпром на 85 млрд гривен ($3,47 млрд) за злоупотребление монопольным положением на рынке транзита газа по магистральным трубопроводам по территории Украины.
-                      </p>
+                    <div class="tab-body clearfix" id="crude">
+                      <div class="stock-col col-sm-3">
+                        <div class="row-group">
+                          <label class="custom-radio checked"><input checked="checked" class="radio-input" data-target="#crude-news" name="crude_ticker" type="radio" value="brent" />Нефть Brent     </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#crude-news" name="crude_ticker" type="radio" value="avaz" />Золото </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#crude-news" name="crude_ticker" type="radio" value="aflt" />Алюминий </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#crude-news" name="crude_ticker" type="radio" value="vtbr" />Медь </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#crude-news" name="crude_ticker" type="radio" value="gmkn" />Никель </label>
+                        </div>
+                      </div>
+                      <div class="stock-col col-sm-3">
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#crude-news" name="crude_ticker" type="radio" value="lkoh" />Палладий </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#crude-news" name="crude_ticker" type="radio" value="mtss" />Платина </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#crude-news" name="crude_ticker" type="radio" value="lkoh" />Серебро </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#crude-news" name="crude_ticker" type="radio" value="mtss" />Цинк </label>
+                        </div>
+                      </div>
+                      <div class="stock-col col-sm-6 hidden-xs white-bg">
+                        <div class="news-container-wrap clearfix">
+                          <div class="news-container clearfix" id="crude-news">
+                            <h2 class="block-title">
+                              Новости и аналитика:
+                            </h2>
+                            <div class="news-item">
+                              <time class="date" datetime="2016-02-01T12:12:20">25.01.2016</time>
+                              <h3 class="news-title">
+                                <a href="#">Завтрак инвестора:<br>Украина решила оштрафовать Газпром на $3,5 млрд</a>
+                              </h3>
+                              <div class="news-content">
+                                <p>
+                                  Антимонопольный комитет Украины решил оштрафовать Газпром на 85 млрд гривен ($3,47 млрд) за злоупотребление монопольным положением на рынке транзита газа по магистральным трубопроводам по территории Украины.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-body clearfix" id="indicies">
+                      <div class="stock-col col-sm-3">
+                        <div class="row-group">
+                          <label class="custom-radio checked"><input checked="checked" class="radio-input" data-target="#indicies-news" name="indicies_ticker" type="radio" value="micex" />ММВБ </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#indicies-news" name="indicies_ticker" type="radio" value="avaz" />РТС </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#indicies-news" name="indicies_ticker" type="radio" value="aflt" />ММВБ-10 </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#indicies-news" name="indicies_ticker" type="radio" value="vtbr" />РТС-2 </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#indicies-news" name="indicies_ticker" type="radio" value="gmkn" />KASE </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#indicies-news" name="indicies_ticker" type="radio" value="lkoh" />Dow (DJIA) </label>
+                        </div>
+                      </div>
+                      <div class="stock-col col-sm-3">
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#indicies-news" name="indicies_ticker" type="radio" value="gazp" />NASDAQ </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#indicies-news" name="indicies_ticker" type="radio" value="avaz" />S&amp;P 500 </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#indicies-news" name="indicies_ticker" type="radio" value="aflt" />Nikkei 225 </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#indicies-news" name="indicies_ticker" type="radio" value="vtbr" />Hang Seng </label>
+                        </div>
+                        <div class="row-group">
+                          <label class="custom-radio"><input class="radio-input" data-target="#indicies-news" name="indicies_ticker" type="radio" value="gmkn" />IBOVESPA </label>
+                        </div>
+                      </div>
+                      <div class="stock-col col-sm-6 hidden-xs white-bg">
+                        <div class="news-container-wrap clearfix">
+                          <div class="news-container clearfix" id="indicies-news">
+                            <h2 class="block-title">
+                              Новости и аналитика:
+                            </h2>
+                            <div class="news-item">
+                              <time class="date" datetime="2016-02-01T12:12:20">25.01.2016</time>
+                              <h3 class="news-title">
+                                <a href="#">Завтрак инвестора:<br>Украина решила оштрафовать Газпром на $3,5 млрд</a>
+                              </h3>
+                              <div class="news-content">
+                                <p>
+                                  Антимонопольный комитет Украины решил оштрафовать Газпром на 85 млрд гривен ($3,47 млрд) за злоупотребление монопольным положением на рынке транзита газа по магистральным трубопроводам по территории Украины.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -206,138 +218,142 @@
             </div>
           </div>
         </div>
-        <div class="graph-container">
-          <div class="clearfix">
-            <h3 class="block-title" id="container-title">
-              Оцените доход от инвестирования в  <span>акции Газпром</span>
-            </h3>
-            <div class="switch clearfix">
-              <a class="item active graph" href="#graph">График</a><a class="item calc" href="#calc">Калькулятор</a>
-            </div>
-          </div>
-          <div class="graph-data">
-            <div class="graph-data-item active clearfix" id="graph">
-              <div class="col">
-                <h3 class="data-title clearfix" id="data-title"></h3>
-                <div class="col col--1">
-                  <div class="card-current-price" id="card-current-price"></div>
-                  <div class="card-change-price">
-                    <span class="down" id="card-change-pips"></span><span class="down" id="card-change-perc"></span>
-                  </div>
-                  <div class="card-ticker" id="card-ticker"></div>
-                  <time class="card-time" id="card-time"></time><time class="card-date" id="card-date"></time>
-                </div>
-                <div class="col col--2 hidden-desktop">
-                  <div class="card-chart" id="card-chart-mobile">
-                    1
-                  </div>
-                </div>
-                <div class="col col--1">
-                  <ul class="card-list">
-                    <li class="clearfix">
-                      <span class="label">Текущая:</span><span class="val" id="card-list-current"></span>
-                    </li>
-                    <li class="clearfix">
-                      <span class="label">Изменение:</span><span class="val" id="card-list-change-perc"></span>
-                    </li>
-                    <li class="clearfix">
-                      <span class="label">Открытие:</span><span class="val" id="card-list-open"></span>
-                    </li>
-                    <li class="clearfix">
-                      <span class="label">Макс:</span><span class="val" id="card-list-max"></span>
-                    </li>
-                    <li class="clearfix">
-                      <span class="label">Мин:</span><span class="val" id="card-list-min"></span>
-                    </li>
-                    <li class="clearfix">
-                      <span class="label">Закрытие:</span><span class="val" id="card-list-close"></span>
-                    </li>
-                    <li class="clearfix">
-                      <span class="label">Объём:</span><span class="val" id="card-list-volume"></span>
-                    </li>
-                  </ul>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="graph-container">
+              <div class="clearfix">
+                <h3 class="block-title" id="container-title">
+                  Оцените доход от инвестирования в  <span>акции Газпром</span>
+                </h3>
+                <div class="switch clearfix">
+                  <a class="item active graph" href="#graph">График</a><a class="item calc" href="#calc">Калькулятор</a>
                 </div>
               </div>
-              <div class="col col--2">
-                <div class="card-chart hidden-phone" id="card-chart">
-                  1
-                </div>
-              </div>
-            </div>
-            <div class="graph-data-item clearfix" id="calc">
-              <div class="col col--3 hidden-phone">
-                <h3 class="description-title" id="description-title"></h3>
-                <div class="description-text" id="description-text"></div>
-              </div>
-              <div class="col col--4">
-                <div class="calculator">
-                  <div class="calc-row clearfix">
-                    <label class="label">Сумма для инвестирования</label>
-                    <div class="input">
-                      <input class="calc-input" id="calc-range-input" name="calc_value" type="text" />
-                      <div class="no-ui-slider" id="range-slider">
-                        <div class="slider" id="calc-range"></div>
+              <div class="graph-data">
+                <div class="graph-data-item active clearfix" id="graph">
+                  <div class="row">
+                    <h3 class="data-title clearfix col-xs-12" id="data-title"></h3>
+                    <div class="col-sm-3">
+                      <div class="card-current-price" id="card-current-price"></div>
+                      <div class="card-change-price">
+                        <span class="down" id="card-change-pips"></span><span class="down" id="card-change-perc"></span>
+                      </div>
+                      <div class="card-ticker" id="card-ticker"></div>
+                      <time class="card-time" id="card-time"></time><time class="card-date" id="card-date"></time>
+                    </div>
+                    <div class="col-xs-12 visible-xs">
+                      <div class="card-chart" id="card-chart-mobile">
+                        1
+                      </div>
+                    </div>
+                    <div class="col-sm-3">
+                      <ul class="card-list">
+                        <li class="clearfix">
+                          <span class="label">Текущая:</span><span class="val" id="card-list-current"></span>
+                        </li>
+                        <li class="clearfix">
+                          <span class="label">Изменение:</span><span class="val" id="card-list-change-perc"></span>
+                        </li>
+                        <li class="clearfix">
+                          <span class="label">Открытие:</span><span class="val" id="card-list-open"></span>
+                        </li>
+                        <li class="clearfix">
+                          <span class="label">Макс:</span><span class="val" id="card-list-max"></span>
+                        </li>
+                        <li class="clearfix">
+                          <span class="label">Мин:</span><span class="val" id="card-list-min"></span>
+                        </li>
+                        <li class="clearfix">
+                          <span class="label">Закрытие:</span><span class="val" id="card-list-close"></span>
+                        </li>
+                        <li class="clearfix">
+                          <span class="label">Объём:</span><span class="val" id="card-list-volume"></span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="card-chart hidden-xs" id="card-chart">
+                        1
                       </div>
                     </div>
                   </div>
-                  <div class="calc-row clearfix">
-                    <label class="label nowrap">Выбор периода инвестирования  <span class="hidden-desktop">(месяц)</span></label>
-                    <div class="input">
-                      <label class="input-label"><input id="calc-period-3" name="calc_period" type="radio" value="0.25" />3  <span>месяца</span></label><label class="input-label active"><input checked="checked" id="calc-period-6" name="calc_period" type="radio" value="0.5" />6  <span>месяцев</span></label><label class="input-label"><input id="calc-period-12" name="calc_period" type="radio" value="1" />12  <span>месяцев</span></label>
+                </div>
+                <div class="graph-data-item clearfix" id="calc">
+                  <div class="col-sm-5 visible-sm visible-md visible-lg">
+                    <h3 class="description-title" id="description-title"></h3>
+                    <div class="description-text" id="description-text"></div>
+                  </div>
+                  <div class="col-sm-7">
+                    <div class="calculator">
+                      <div class="calc-row clearfix">
+                        <label class="label">Сумма для инвестирования</label>
+                        <div class="input">
+                          <input class="calc-input" id="calc-range-input" name="calc_value" type="text" />
+                          <div class="no-ui-slider" id="range-slider">
+                            <div class="slider" id="calc-range"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="calc-row clearfix">
+                        <label class="label nowrap">Выбор периода инвестирования  <span class="hidden-sm hidden-md hidden-lg">(месяц)</span></label>
+                        <div class="input">
+                          <label class="input-label"><input id="calc-period-3" name="calc_period" type="radio" value="0.25" />3  <span>месяца</span></label><label class="input-label active"><input checked="checked" id="calc-period-6" name="calc_period" type="radio" value="0.5" />6  <span>месяцев</span></label><label class="input-label"><input id="calc-period-12" name="calc_period" type="radio" value="1" />12  <span>месяцев</span></label>
+                        </div>
+                      </div>
+                      <div class="calc-row clearfix">
+                        <div class="label">
+                          <label class="label nowrap">Акции куплены:  
+                            <div id="stock-buy-date">
+                              06.10.2014
+                            </div>
+                            <div id="stock-buy-price">
+                              по 222.30 руб
+                            </div>
+                          </label><label class="label nowrap">Акции проданы:  
+                            <div id="stock-sell-date">
+                              06.10.2014
+                            </div>
+                            <div id="stock-sell-price">
+                              по 222.30 руб
+                            </div>
+                          </label>
+                        </div>
+                        <div class="input">
+                          <table>
+                            <tr>
+                              <th>
+                                Доход
+                              </th>
+                              <td id="profit">
+                                508 596 руб.
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>
+                                Доход в % годовых
+                              </th>
+                              <td id="profit-percent">
+                                31.17%
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>
+                                Доход за  <span id="profit-time">6 месяцев</span>
+                              </th>
+                              <td id="profit-period">
+                                68 234 руб.
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="calc-row clearfix">
-                    <div class="label">
-                      <label class="label nowrap">Акции куплены:  
-                        <div id="stock-buy-date">
-                          06.10.2014
-                        </div>
-                        <div id="stock-buy-price">
-                          по 222.30 руб
-                        </div>
-                      </label><label class="label nowrap">Акции проданы:  
-                        <div id="stock-sell-date">
-                          06.10.2014
-                        </div>
-                        <div id="stock-sell-price">
-                          по 222.30 руб
-                        </div>
-                      </label>
-                    </div>
-                    <div class="input">
-                      <table>
-                        <tr>
-                          <th>
-                            Доход
-                          </th>
-                          <td id="profit">
-                            508 596 руб.
-                          </td>
-                        </tr>
-                        <tr>
-                          <th>
-                            Доход в % годовых
-                          </th>
-                          <td id="profit-percent">
-                            31.17%
-                          </td>
-                        </tr>
-                        <tr>
-                          <th>
-                            Доход за  <span id="profit-time">6 месяцев</span>
-                          </th>
-                          <td id="profit-period">
-                            68 234 руб.
-                          </td>
-                        </tr>
-                      </table>
-                    </div>
+                  <div class="col-sm-6 visible-xs">
+                    <h3 class="description-title" id="description-title-mob"></h3>
+                    <div class="description-text" id="description-text-mob"></div>
                   </div>
                 </div>
-              </div>
-              <div class="col col--3 hidden-desktop">
-                <h3 class="description-title" id="description-title-mob"></h3>
-                <div class="description-text" id="description-text-mob"></div>
               </div>
             </div>
           </div>
@@ -345,14 +361,15 @@
       </div>
     </div>
     <div class="consultation-wrapper clearfix">
-      <div class="layout">
+      <div class="container">
         <div class="consultation">
           <h3 class="block-title">
             Узнайте, как заработать на финансовых инструментах
           </h3>
           <form class="consultation-form" id="consultation-form" name="consultation_form">
             <div class="row">
-              <span class="mob-row"><label class="hidden-desktop" for="#consultation-form-city">Город</label><select aria-invalid="false" class="form-select" id="consultation-form-city" name="city">
+              <div class="mob-row col-sm-2">
+                <label class="hidden-sm hidden-md hidden-lg" for="#consultation-form-city">Город</label><select aria-invalid="false" class="form-select" id="consultation-form-city" name="city">
                   <option selected="selected" value="108">
                     Москва
                   </option>
@@ -482,301 +499,348 @@
                   <option value="0">
                     Другой город
                   </option>
-                </select></span><span class="mob-row"><label class="hidden-desktop" for="#consultation-form-full-name">Имя</label><input class="form-input" id="consultation-form-full-name" name="full_name" placeholder="ФИО" type="text" /></span><span class="mob-row"><label class="hidden-desktop" for="#consultation-form-phone">Телефон</label><input class="form-input" id="consultation-form-phone" name="phone" placeholder="Телефон" type="text" /></span><span class="mob-row"><label class="hidden-desktop" for="#consultation-form-email">E-mail</label><input class="form-input" id="consultation-form-email" name="email" placeholder="E-mail" type="text" /></span><input class="form-submit" name="ok" type="submit" value="Получить консультацию" />
+                </select>
+              </div>
+              <div class="mob-row col-sm-2">
+                <label class="hidden-sm hidden-md hidden-lg" for="#consultation-form-full-name">Имя</label><input class="form-input" id="consultation-form-full-name" name="full_name" placeholder="ФИО" type="text" />
+              </div>
+              <div class="mob-row col-sm-2">
+                <label class="hidden-sm hidden-md hidden-lg" for="#consultation-form-phone">Телефон</label><input class="form-input" id="consultation-form-phone" name="phone" placeholder="Телефон" type="text" />
+              </div>
+              <div class="mob-row col-sm-2">
+                <label class="hidden-sm hidden-md hidden-lg" for="#consultation-form-email">E-mail</label><input class="form-input" id="consultation-form-email" name="email" placeholder="E-mail" type="text" />
+              </div>
+              <div class="col-sm-4">
+                <input class="form-submit" name="ok" type="submit" value="Получить консультацию" />
+              </div>
             </div>
           </form>
         </div>
       </div>
     </div>
     <div class="meta clearfix">
-      <div class="layout">
-        <h3 class="section-title">
-          Новости и аналитика:
-        </h3>
-        <ul class="meta-news-container" id="meta-news-container"></ul>
-        <div class="consultation hidden-phone">
-          <h3 class="block-title">
-            Узнайте, как заработать на финансовых инструментах
-          </h3>
-          <form class="consultation-form grey" id="consultation-form-2" name="consultation_form_2">
-            <div class="row">
-              <select aria-invalid="false" class="form-select" name="city">
-                <option selected="selected" value="108">
-                  Москва
-                </option>
-                <option value="134">
-                  Новосибирск
-                </option>
-                <option value="113">
-                  Альметьевск
-                </option>
-                <option value="105">
-                  Астрахань
-                </option>
-                <option value="79">
-                  Барнаул
-                </option>
-                <option value="132">
-                  Владивосток
-                </option>
-                <option value="147">
-                  Волгоград
-                </option>
-                <option value="63">
-                  Воронеж
-                </option>
-                <option value="14">
-                  Екатеринбург
-                </option>
-                <option value="168">
-                  Ижевск
-                </option>
-                <option value="88">
-                  Иркутск
-                </option>
-                <option value="146">
-                  Казань
-                </option>
-                <option value="27">
-                  Калининград
-                </option>
-                <option value="37">
-                  Кемерово
-                </option>
-                <option value="21">
-                  Краснодар
-                </option>
-                <option value="116">
-                  Красноярск
-                </option>
-                <option value="92">
-                  Лимассол
-                </option>
-                <option value="112">
-                  Липецк
-                </option>
-                <option value="149">
-                  Нижний Новгород
-                </option>
-                <option value="152">
-                  Новокузнецк
-                </option>
-                <option value="64">
-                  Норильск
-                </option>
-                <option value="97">
-                  Омск
-                </option>
-                <option value="23">
-                  Оренбург
-                </option>
-                <option value="170">
-                  Пенза
-                </option>
-                <option value="62">
-                  Пермь
-                </option>
-                <option value="89">
-                  Ростов-на-Дону
-                </option>
-                <option value="19">
-                  Самара
-                </option>
-                <option value="15">
-                  Санкт-Петербург
-                </option>
-                <option value="81">
-                  Саратов
-                </option>
-                <option value="161">
-                  Сочи
-                </option>
-                <option value="129">
-                  Ставрополь
-                </option>
-                <option value="135">
-                  Стерлитамак
-                </option>
-                <option value="114">
-                  Сургут
-                </option>
-                <option value="153">
-                  Таганрог
-                </option>
-                <option value="29">
-                  Тольятти
-                </option>
-                <option value="90">
-                  Томск
-                </option>
-                <option value="53">
-                  Тула
-                </option>
-                <option value="69">
-                  Тюмень
-                </option>
-                <option value="167">
-                  Уфа
-                </option>
-                <option value="57">
-                  Челябинск
-                </option>
-                <option value="12">
-                  Череповец
-                </option>
-                <option value="133">
-                  Ярославль
-                </option>
-                <option value="0">
-                  Другой город
-                </option>
-              </select><input class="form-input" name="full_name" placeholder="ФИО" type="text" /><input class="form-input" name="phone" placeholder="Телефон" type="text" /><input class="form-input" name="email" placeholder="E-mail" type="text" /><input class="form-submit" name="ok" type="submit" value="Получить консультацию" />
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h3 class="section-title">
+              Новости и аналитика:
+            </h3>
+            <ul class="meta-news-container" id="meta-news-container"></ul>
+            <div class="consultation hidden-xs">
+              <h3 class="block-title">
+                Узнайте, как заработать на финансовых инструментах
+              </h3>
+              <form class="consultation-form grey" id="consultation-form-2" name="consultation_form_2">
+                <div class="row">
+                  <div class="col-sm-2">
+                    <select aria-invalid="false" class="form-select" name="city">
+                      <option selected="selected" value="108">
+                        Москва
+                      </option>
+                      <option value="134">
+                        Новосибирск
+                      </option>
+                      <option value="113">
+                        Альметьевск
+                      </option>
+                      <option value="105">
+                        Астрахань
+                      </option>
+                      <option value="79">
+                        Барнаул
+                      </option>
+                      <option value="132">
+                        Владивосток
+                      </option>
+                      <option value="147">
+                        Волгоград
+                      </option>
+                      <option value="63">
+                        Воронеж
+                      </option>
+                      <option value="14">
+                        Екатеринбург
+                      </option>
+                      <option value="168">
+                        Ижевск
+                      </option>
+                      <option value="88">
+                        Иркутск
+                      </option>
+                      <option value="146">
+                        Казань
+                      </option>
+                      <option value="27">
+                        Калининград
+                      </option>
+                      <option value="37">
+                        Кемерово
+                      </option>
+                      <option value="21">
+                        Краснодар
+                      </option>
+                      <option value="116">
+                        Красноярск
+                      </option>
+                      <option value="92">
+                        Лимассол
+                      </option>
+                      <option value="112">
+                        Липецк
+                      </option>
+                      <option value="149">
+                        Нижний Новгород
+                      </option>
+                      <option value="152">
+                        Новокузнецк
+                      </option>
+                      <option value="64">
+                        Норильск
+                      </option>
+                      <option value="97">
+                        Омск
+                      </option>
+                      <option value="23">
+                        Оренбург
+                      </option>
+                      <option value="170">
+                        Пенза
+                      </option>
+                      <option value="62">
+                        Пермь
+                      </option>
+                      <option value="89">
+                        Ростов-на-Дону
+                      </option>
+                      <option value="19">
+                        Самара
+                      </option>
+                      <option value="15">
+                        Санкт-Петербург
+                      </option>
+                      <option value="81">
+                        Саратов
+                      </option>
+                      <option value="161">
+                        Сочи
+                      </option>
+                      <option value="129">
+                        Ставрополь
+                      </option>
+                      <option value="135">
+                        Стерлитамак
+                      </option>
+                      <option value="114">
+                        Сургут
+                      </option>
+                      <option value="153">
+                        Таганрог
+                      </option>
+                      <option value="29">
+                        Тольятти
+                      </option>
+                      <option value="90">
+                        Томск
+                      </option>
+                      <option value="53">
+                        Тула
+                      </option>
+                      <option value="69">
+                        Тюмень
+                      </option>
+                      <option value="167">
+                        Уфа
+                      </option>
+                      <option value="57">
+                        Челябинск
+                      </option>
+                      <option value="12">
+                        Череповец
+                      </option>
+                      <option value="133">
+                        Ярославль
+                      </option>
+                      <option value="0">
+                        Другой город
+                      </option>
+                    </select>
+                  </div>
+                  <div class="col-sm-2">
+                    <input class="form-input" name="full_name" placeholder="ФИО" type="text" />
+                  </div>
+                  <div class="col-sm-2">
+                    <input class="form-input" name="phone" placeholder="Телефон" type="text" />
+                  </div>
+                  <div class="col-sm-2">
+                    <input class="form-input" name="email" placeholder="E-mail" type="text" />
+                  </div>
+                  <div class="col-sm-4">
+                    <input class="form-submit" name="ok" type="submit" value="Получить консультацию" />
+                  </div>
+                </div>
+              </form>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
-    <div class="consultation-wrapper grey clearfix hidden-desktop">
-      <div class="layout">
-        <div class="consultation">
-          <h3 class="block-title">
-            Узнайте, как заработать на финансовых инструментах
-          </h3>
-          <form class="consultation-form grey" id="consultation-form-3" name="consultation_form_3">
-            <div class="row">
-              <span class="mob-row"><label class="hidden-desktop" for="#consultation-form-3-city">Город</label><select aria-invalid="false" class="form-select" id="consultation-form-3-city" name="city">
-                  <option selected="selected" value="108">
-                    Москва
-                  </option>
-                  <option value="134">
-                    Новосибирск
-                  </option>
-                  <option value="113">
-                    Альметьевск
-                  </option>
-                  <option value="105">
-                    Астрахань
-                  </option>
-                  <option value="79">
-                    Барнаул
-                  </option>
-                  <option value="132">
-                    Владивосток
-                  </option>
-                  <option value="147">
-                    Волгоград
-                  </option>
-                  <option value="63">
-                    Воронеж
-                  </option>
-                  <option value="14">
-                    Екатеринбург
-                  </option>
-                  <option value="168">
-                    Ижевск
-                  </option>
-                  <option value="88">
-                    Иркутск
-                  </option>
-                  <option value="146">
-                    Казань
-                  </option>
-                  <option value="27">
-                    Калининград
-                  </option>
-                  <option value="37">
-                    Кемерово
-                  </option>
-                  <option value="21">
-                    Краснодар
-                  </option>
-                  <option value="116">
-                    Красноярск
-                  </option>
-                  <option value="92">
-                    Лимассол
-                  </option>
-                  <option value="112">
-                    Липецк
-                  </option>
-                  <option value="149">
-                    Нижний Новгород
-                  </option>
-                  <option value="152">
-                    Новокузнецк
-                  </option>
-                  <option value="64">
-                    Норильск
-                  </option>
-                  <option value="97">
-                    Омск
-                  </option>
-                  <option value="23">
-                    Оренбург
-                  </option>
-                  <option value="170">
-                    Пенза
-                  </option>
-                  <option value="62">
-                    Пермь
-                  </option>
-                  <option value="89">
-                    Ростов-на-Дону
-                  </option>
-                  <option value="19">
-                    Самара
-                  </option>
-                  <option value="15">
-                    Санкт-Петербург
-                  </option>
-                  <option value="81">
-                    Саратов
-                  </option>
-                  <option value="161">
-                    Сочи
-                  </option>
-                  <option value="129">
-                    Ставрополь
-                  </option>
-                  <option value="135">
-                    Стерлитамак
-                  </option>
-                  <option value="114">
-                    Сургут
-                  </option>
-                  <option value="153">
-                    Таганрог
-                  </option>
-                  <option value="29">
-                    Тольятти
-                  </option>
-                  <option value="90">
-                    Томск
-                  </option>
-                  <option value="53">
-                    Тула
-                  </option>
-                  <option value="69">
-                    Тюмень
-                  </option>
-                  <option value="167">
-                    Уфа
-                  </option>
-                  <option value="57">
-                    Челябинск
-                  </option>
-                  <option value="12">
-                    Череповец
-                  </option>
-                  <option value="133">
-                    Ярославль
-                  </option>
-                  <option value="0">
-                    Другой город
-                  </option>
-                </select></span><span class="mob-row"><label class="hidden-desktop" for="#consultation-form-3-full-name">Имя</label><input class="form-input" id="consultation-form-3-full-name" name="full_name" placeholder="ФИО" type="text" /></span><span class="mob-row"><label class="hidden-desktop" for="#consultation-form-3-phone">Телефон</label><input class="form-input" id="consultation-form-3-phone" name="phone" placeholder="Телефон" type="text" /></span><span class="mob-row"><label class="hidden-desktop" for="#consultation-form-3-email">E-mail</label><input class="form-input" id="consultation-form-3-email" name="email" placeholder="E-mail" type="text" /></span><input class="form-submit" name="ok" type="submit" value="Получить консультацию" />
-            </div>
-          </form>
+    <div class="consultation-wrapper grey clearfix visible-xs">
+      <div class="container">
+        <div class="col-xs-12">
+          <div class="consultation">
+            <h3 class="block-title">
+              Узнайте, как заработать на финансовых инструментах
+            </h3>
+            <form class="consultation-form grey" id="consultation-form-3" name="consultation_form_3">
+              <div class="row">
+                <div class="mob-row col-sm-2">
+                  <label class="hidden-sm hidden-md hidden-lg" for="#consultation-form-3-city">Город</label><select aria-invalid="false" class="form-select" id="consultation-form-3-city" name="city">
+                    <option selected="selected" value="108">
+                      Москва
+                    </option>
+                    <option value="134">
+                      Новосибирск
+                    </option>
+                    <option value="113">
+                      Альметьевск
+                    </option>
+                    <option value="105">
+                      Астрахань
+                    </option>
+                    <option value="79">
+                      Барнаул
+                    </option>
+                    <option value="132">
+                      Владивосток
+                    </option>
+                    <option value="147">
+                      Волгоград
+                    </option>
+                    <option value="63">
+                      Воронеж
+                    </option>
+                    <option value="14">
+                      Екатеринбург
+                    </option>
+                    <option value="168">
+                      Ижевск
+                    </option>
+                    <option value="88">
+                      Иркутск
+                    </option>
+                    <option value="146">
+                      Казань
+                    </option>
+                    <option value="27">
+                      Калининград
+                    </option>
+                    <option value="37">
+                      Кемерово
+                    </option>
+                    <option value="21">
+                      Краснодар
+                    </option>
+                    <option value="116">
+                      Красноярск
+                    </option>
+                    <option value="92">
+                      Лимассол
+                    </option>
+                    <option value="112">
+                      Липецк
+                    </option>
+                    <option value="149">
+                      Нижний Новгород
+                    </option>
+                    <option value="152">
+                      Новокузнецк
+                    </option>
+                    <option value="64">
+                      Норильск
+                    </option>
+                    <option value="97">
+                      Омск
+                    </option>
+                    <option value="23">
+                      Оренбург
+                    </option>
+                    <option value="170">
+                      Пенза
+                    </option>
+                    <option value="62">
+                      Пермь
+                    </option>
+                    <option value="89">
+                      Ростов-на-Дону
+                    </option>
+                    <option value="19">
+                      Самара
+                    </option>
+                    <option value="15">
+                      Санкт-Петербург
+                    </option>
+                    <option value="81">
+                      Саратов
+                    </option>
+                    <option value="161">
+                      Сочи
+                    </option>
+                    <option value="129">
+                      Ставрополь
+                    </option>
+                    <option value="135">
+                      Стерлитамак
+                    </option>
+                    <option value="114">
+                      Сургут
+                    </option>
+                    <option value="153">
+                      Таганрог
+                    </option>
+                    <option value="29">
+                      Тольятти
+                    </option>
+                    <option value="90">
+                      Томск
+                    </option>
+                    <option value="53">
+                      Тула
+                    </option>
+                    <option value="69">
+                      Тюмень
+                    </option>
+                    <option value="167">
+                      Уфа
+                    </option>
+                    <option value="57">
+                      Челябинск
+                    </option>
+                    <option value="12">
+                      Череповец
+                    </option>
+                    <option value="133">
+                      Ярославль
+                    </option>
+                    <option value="0">
+                      Другой город
+                    </option>
+                  </select>
+                </div>
+                <div class="mob-row col-sm-2">
+                  <label class="hidden-sm hidden-md hidden-lg" for="#consultation-form-3-full-name">Имя</label><input class="form-input" id="consultation-form-3-full-name" name="full_name" placeholder="ФИО" type="text" />
+                </div>
+                <div class="mob-row col-sm-2">
+                  <label class="hidden-sm hidden-md hidden-lg" for="#consultation-form-3-phone">Телефон</label><input class="form-input" id="consultation-form-3-phone" name="phone" placeholder="Телефон" type="text" />
+                </div>
+                <div class="mob-row col-sm-2">
+                  <label class="hidden-sm hidden-md hidden-lg" for="#consultation-form-3-email">E-mail</label><input class="form-input" id="consultation-form-3-email" name="email" placeholder="E-mail" type="text" />
+                </div>
+                <div class="col-sm-4">
+                  <input class="form-submit" name="ok" type="submit" value="Получить консультацию" />
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
